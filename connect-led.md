@@ -30,7 +30,7 @@
 
 ![Pin Diagram](images/gpio-numbers-pi2.png)
 
-1. Dans l'exemple ci-dessous, la broche 17 a été utilisé. Lorsqu'elle est connectée, la LED sera très probablement éteinte.
+8. Dans l'exemple ci-dessous, la broche 17 a été utilisé. Lorsqu'elle est connectée, la LED sera très probablement éteinte.
 
 ![Pin 17](images/led-gpio17.png)
 
