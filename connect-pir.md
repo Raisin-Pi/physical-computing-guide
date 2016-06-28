@@ -1,13 +1,13 @@
-# Connecting a PIR Motion Sensor
+# Connecter un détecteur de mouvement (infrarouge)
 
-1. Before booting your Raspberry Pi, connect the Passive Infrared (PIR) module to the Raspberry Pi.
+1. Avant de démarrer votre Raspberry Pi, connectez le module infrarouge (PIR) au Raspberry Pi .
 
-1. Using three female-to-female jumper cables, you'll need to connect each of the PIR sensor's connectors to the appropriate pins on the Raspberry Pi.
+2. Prenez trois câbles de connexion femelle / femelle, et connectez chacun des connecteurs du capteur PIR aux broches appropriées sur le Raspberry Pi .
 
-1. Connect the top one labelled `VCC` on the PIR sensor to the 5V pin on the Raspberry Pi, connect the middle one labelled `OUT` to GPIO pin 4, and connect the bottom one labelled `GND` to a ground pin also marked `GND`. All shown in the following diagram:
+3. Branchez le connecteur du haut du capteur PIR, celui marqué `VCC` à la broche 5V du Raspberry Pi. Connectez celui du milieu, marqué `OUT` à la broche GPIO 4, et connectez celui du bas, indiqué `GND` à une broche de la masse du Raspberry Pi, également marquée `GND`. Tout est indiqué dans le schéma suivant :
 
   ![](images/pir_wiring.png)
 
-1. Now boot your Pi and log in.
+4. Maintenant, démarrez votre Pi et connectez-vous.
 
-[Back to getting started with physical computing](worksheet.md)
+[Retour vers "Commencer avec l'informatique Physique"](worksheet.md)
