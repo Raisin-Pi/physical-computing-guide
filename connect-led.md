@@ -14,25 +14,27 @@
     Les broches d'entrée et de sortie universelles (GPIO) sur le Raspberry Pi peuvent communiquer avec le monde extérieur et peut être contrôlées ou programmées. Les différentes broches ont des rôles différents. Pour nous faciliter la vie, les broches sont numérotées pour référence.
 
 
-1. Connectez votre LED sur les broches 3.3 Volts et à la masse (GND) comme indiqué ci-dessous
+5. Connectez votre LED sur les broches 3.3 Volts et à la masse (GND) comme indiqué ci-dessous
 
     ![](images/led-3v3.png)
 
-1.  Plug in the micro USB power supply and you should see some text appear on your screen.
+6.  Branchez l'alimentation micro USB et vous devriez voir un texte apparaître sur votre écran.
 
-    Now you have a circuit and the LED should be on. If it is not, make sure that you have plugged the jumper wires into the correct pins by checking the diagram above.
+    Maintenant, vous avez un circuit et la LED devrait être allumée. Dans le cas contraire, assurez-vous d'avoir branché les câbles de liaison dans les broches corrspondantes en vérifiant le schéma ci-dessus.
 
-    Why does the LED shine? When the circuit is plugged into the Raspberry Pi GPIO pins, electricity flows through the circuit. The flow is called the current. The LED lights up only when electric current flows from the long leg through the bulb to the short leg. The resistor reduces the amount of electric current passing through the circuit. This protects the LED from breaking, as a high current will make the light shine more brightly and then stop working.
+    Pourquoi la LED brille ? Lorsque le circuit est branché sur les broches GPIO du Raspberry Pi, l'électricité circule à travers le circuit. Le flux est appelé le courant électrique. La LED est allumée uniquement lorsque le courant électrique circule de la branche longue à travers l'ampoule jusqu'à la branche courte La résistance diminue la quantité de courant électrique passant à travers le circuit. Ceci protège la LED de la casse, puisqu'un courant élevé fera briller la lumière plus vivement et s'éteindra plus rapidement.
+    
 
-1. Now that you know your LED is working you can connect it to another pin which the Raspberry Pi can switch on and off. Move the wire from the 3.3v pin to any of the GPIO pins coloured yellow on this diagram.
+7. Maintenant que vous savez que votre LED fonctionne, vous pouvez la connecter à une autre broche que le Raspberry Pi peut allumer et éteindre. Déplacez le fil de la broche de 3.3 V sur l'une des broches GPIO de couleur jaune sur ce diagramme.
+
 
 ![Pin Diagram](images/gpio-numbers-pi2.png)
 
-1. In the example below pin 17 has been used, when connected the LED will most likely turn off.
+1. Dans l'exemple ci-dessous, la broche 17 a été utilisé. Lorsqu'elle est connectée, la LED sera très probablement éteinte.
 
 ![Pin 17](images/led-gpio17.png)
 
-Once you have connected your LED you can control it using a number of programing languages.
+Une fois que vous avez connecté votre LED, vous pouvez la contrôler en utilisant un certain nombre de langages de programmation.
 
 |  |     |
 | --- | --- |
