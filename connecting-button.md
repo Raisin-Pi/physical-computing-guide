@@ -44,7 +44,6 @@ Notez que si vous avez un modèle Raspberry Pi plus ancien, vous aurez seulement
     
 Si vous utiliez une mini platine de prototypage sans rail de masse désigné, vous devrez utiliser une des lignes comme un rail de masse. Définissez une rangée de broches de terre et les autres points de cette rangée seront reliés à la terre comme ceci :
 
-
     ![](images/gpio-connect-ground-mini.png)
 
 [Retour vers "Commencer avec l'informatique Physique"](worksheet.md)
