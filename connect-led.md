@@ -1,18 +1,20 @@
-# Connecting an LED without a Breadboard
+# Connecter une Led sans Breadboard
 
-1.  The LED has a short leg and a long leg. Slot a jumper wire onto the long leg.
+1.  La LED a une branche courte et une branche longue. Insérez un câble de liaison sur la branche longue.
 
-1.  Slot the resistor into the other end of the same jumper wire.
+2.  Insérez une résistance dans l'autre extrémité de ce même câble de liaison.
 
-1.  Add another jumper wire the other end of the resistor.
+3.  Ajoutez un autre câble de liaison de l'autre côté de la résistance.
 
-1.  Make another jumper wire and slot one end onto the short leg of the LED. You should end up with something that looks like this:
+4.  Prendre un autre câble de liaison et insérer le sur la branche courte de la LED. Vous devriez vous retrouver avec quelque chose qui ressemble à ceci:
+
 
     ![](images/led-wired.png)
 
-    The general purpose input output (GPIO) pins on the Raspberry Pi can communicate with the  outside world and can be controlled or programmed.  Different pins have different roles. To make life easier the pins are numbered for reference.
+    Les broches d'entrée et de sortie universelles (GPIO) sur le Raspberry Pi peuvent communiquer avec le monde extérieur et peut être contrôlées ou programmées. Les différentes broches ont des rôles différents. Pour nous faciliter la vie, les broches sont numérotées pour référence.
 
-1. Connect your LED to the 3.3v and ground pins as shown below.
+
+1. Connectez votre LED sur les broches 3.3 Volts et à la masse (GND) comme indiqué ci-dessous
 
     ![](images/led-3v3.png)
 
@@ -37,4 +39,4 @@ Once you have connected your LED you can control it using a number of programing
 | [![Scratch](images/scratch_logo.png)](test-led-scratch.md) | [![Scratch](images/python_logo.png)](test-led-python.md) |
 
 
-[Back to getting started with physical computing](worksheet.md)
+[Retour vers "Commencer avec l'informatique Physique"](worksheet.md)
