@@ -1,8 +1,9 @@
-# Connecting a push button
+# Connecter un bouton poussoir
 
-A push button will complete a circuit when the button is pressed.  What that means is that a current will not flow across the button until it is pressed.  When it is released, the circuit will be broken.
+Un bouton poussoir fermera un circuit lorsque le bouton sera pressé. Cela signifie que le courant ne circule pas tant qe le bouton n'est pas enfoncé. Quand il est libéré, le circuit est ouvert.
 
-Firstly, haave a look at the following GPIO diagram. You'll be using a single ground pin (marked `GND`) and several GPIO pins (marked `GPIO`):
+Tout d'abord, jetez un oeil sur le schéma GPIO suivant. Vous utiliserez une seule broche de terre (marqué `GND`) et plusieurs broches GPIO (marqué `GPIO`) :
+
 
 |            |            |
 |-----------:|:-----------|
@@ -27,22 +28,23 @@ Firstly, haave a look at the following GPIO diagram. You'll be using a single gr
 | **GPIO26** | **GPIO20** |
 |        GND | **GPIO21** |
 
-Note that if you have an older Raspberry Pi model you'll only have 26 pins but they have the same layout, starting at the top row (`3V3` and `5V` and ending at `GND` and `GPIO7`).
+Notez que si vous avez un modèle Raspberry Pi plus ancien, vous aurez seulement 26 broches, mais elles ont la même disposition, à partir de la rangée supérieure (`3V3` et `5V`) et se terminant par (`GND` et `GPIO7`).
     
-1. Find a ground pin (marked `GND`) on the diagram of the Raspberry Pi's pin layout above.
+1. Trouver une broche de masse (marquée ` GND`) sur le schéma ci-dessus.
 
-1. Attach a wire to a ground pin on the Raspberry Pi and connect it to the ground rail on your breadboard like so:
+2. Fixer un câble à une broche de terre du Raspberry Pi et branchez-le sur le rail de la masse de la platine de prototypage (breadboard) comme ceci:
 
     ![](images/gpio-connect-ground.png)
 
-1. Place the button on the breadboard and connect one of its feet to the ground rail.
+3. Placez le bouton boussoir sur la platine de prototypage et connectez l'un de ses pieds sur le rail de la terre.
 
-1. Connect the button's other foot (on the same side) to GPIO pin 2 like so:
+4. Connectez l'autre pied du bouton poussoir (du même côté) à la broche GPIO 2 comme ceci:
 
     ![](images/gpio-connect-button.png)
     
-    If you're using a mini breadboard without a designated ground rail, you'll have to use one of the rows as the ground rail. Connect a row to a ground pin and the other points in that row will be connected to ground like so:
+Si vous utiliez une mini platine de prototypage sans rail de masse désigné, vous devrez utiliser une des lignes comme un rail de masse. Définissez une rangée de broches de terre et les autres points de cette rangée seront reliés à la terre comme ceci :
+
 
     ![](images/gpio-connect-ground-mini.png)
 
-[Back to getting started with physical computing](worksheet.md)
+[Retour vers "Commencer avec l'informatique Physique"](worksheet.md)
