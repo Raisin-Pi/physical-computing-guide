@@ -1,31 +1,33 @@
-# Connecting and controlling an LED with a Breadboard
+# Connecter et commander une LED avec un Breadboard
 
-In this circuit, you are going to connect your Raspberry Pi to a breadboard to allow you to connect multiple LEDs.
+Dans ce circuit, vous allez connecter votre Raspberry Pi à un breadboard afin de vous permettre de brancher plusieurs LEDs.
 
-Using a breadboard allows you to connect electronic components to each other without having to solder them together. They are often used to test a circuit design before creating a Printed Circuit Board (PCB). The holes on the breadboard are connected in a pattern. On the breadboard in the CamJam EduKit, the left hand column of holes (marked with a red line) are all connected together, this is the **live**. The second column (marked with a blue line) are also connected together; we call this the **ground** rail. There is another seperate pair of on the other side of the breadboard. In the middle, the holes are connected together in rows of 5 with a break in the middle.
+L'utilisation d'un breadboard vous permet de connecter des composants électroniques les uns aux autres sans avoir à les souder ensemble. Ils sont souvent utilisés pour tester un circuit avant de créer une carte de circuit imprimé (PCB). Les trous sur la carte de test sont connectés selon une configuration. Sur la platine de prototypage (breadboard) du "CamJam EduKit", les trous de la colonne gauche (marquée par une ligne rouge) sont tous reliés entre eux , c'est la partie "conducteur". Les trous de la deuxième colonne (marquée par une ligne bleue) sont également reliés entre eux ; nous appelons cela la "masse". Il existe une autre paire de "côté conducteur / masse" de l'autre côté de la platine de prototypage. Au milieu, les trous sont reliés entre eux dans des rangées de 5 avec une coupure au milieu.
 
-1. Take a female to male jumper wire and connect the female end to a ground GPIO pin on the Raspberry Pi. Push the other end of the jumper wire into a hole on the ground rail on your breadboard like so:
+1. Prenez un câble de connexion mâle / femelle et connecter l'extrémité femelle à une broche GPIO correspondant à la masse sur le Raspberry Pi. Enfoncez l'autre extrémité du câble de connexion dans un trou sur le rail de la masse de la platine de prototypage comme ceci:
 
     ![](images/gpio-connect-ground.png)
 
-1. Now take a red LED and have a look at it. Note that one leg is longer than the other.
+2. Maintenant, prenez une LED rouge et jetez-y un coup d'oeil. Notez qu'une branche est plus longue que l'autre.
 
-1. Push the long leg of the LED into a hole on the 'E' column of the breadboard, e.g. E3, and the shorter leg into a hole next to it on the same column, e.g. E2, like this:
+3. Enfoncez la branche longue de la LED dans un trou sur la colonne « E » de la platine de prototypage, par exemple E3 et la jambe la plus courte dans un trou à côté de lui sur la même colonne, par exemple E2 , comme ceci:
 
     ![](images/gpio-connect-red-led.png)
 
-1. Locate a 330Ω resistor and connect one leg into a hole on the ground rail and the other leg into a hole on the breadboard that lines up to the shorter leg of your LED, e.g. A2. It does not matter which way around the resistor goes. You will need to bend the legs of the resistor to fit, but make sure that the wires of each leg do not cross each other.
+4. Trouvez une résistance de 330 Ohms et connectez une branche dans un trou du rail de la masse et l'autre branche dans un trou (de la platine de prototypage) de la même ligne que la branche la plus courte de la LED, par exemple A2. Le sens de la résistance n'a pas d'importance. Vous aurez besoin de plier les branches de la résistance à monter, mais assurez-vous que les fils de chaque jambe ne se croisent pas .
+
 
     ![](images/gpio-connect-resistor.png)
 
-1. Now you need to complete the circuit in order for current to flow around it from the Raspberry Pi to light up the LED. To do this you are going to use another jumper wire.
+5. Maintenant, vous devez compléter le circuit afin que le courant puisse circuler dans le Raspberry Pi et allumer la LED. Pour ce faire, vous allez utiliser un autre câble de connexion.
 
-    Take a female to male jumper wire and connect the female end to `GPIO 17` on your Raspberry Pi.  Then push the male end of the jumper wire into a hole on the breadboard that lines up with the longer leg of the LED, e.g. A3.
+Prenez n câble de connexion mâle / femelle et connecter l'extrémité femelle à la broche `GPIO 17` de votre Raspberry Pi. Puis, enfoncez l'extrémité mâle du câble dans un trou sur la platine de prototypage, qui est alignée avec la branche la plus longue de la LED, par exemple A3.
 
     ![](images/gpio-complete-circuit.png)
 
-1. Now that you have connected your first LED, adding more only requires another resistor, jumper wire and LED. In the example below three LEDs have been connected using pins 18,7,20.
+6. Maintenant que vous avez connecté votre première LED, vous pouvez en ajouter davantage à l'aide d'autres résistances, câbles de connexion et LED. Dans l'exemple ci-dessous, trois LED ont été connectées en utilisant dls broches 18,7,20.
+
 
   ![](images/gpio-complete-circuit2.png)
 
-[Back to getting started with physical computing](worksheet.md)
+[Retour vers "Commencer avec l'informatique Physique"](worksheet.md)
