@@ -1,6 +1,7 @@
-By reading this guide to physical computing you will learn:
+En lisant ce guide  au sujet de l'informatique physique, vous apprendrez:
 
-- How to identify GPIO pins on a Raspberry Pi, and what the GPIO pins are used for
-- Basic knowledge of different types of components
-- Differences between inputs and outputs
-- How Passive Infrared (PIR) sensors work
+- Comment identifier les broches GPIO sur un Raspberry Pi, et pour quels usages sont utilisées les broches GPIO.
+- Les connaissances de base des différents types de composants.
+- Les différences entre les entrées et les sorties.
+- Comment fonctionne les détecteurs de mouvement (infrarouge / PIR).
+
