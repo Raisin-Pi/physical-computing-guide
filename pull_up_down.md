@@ -1,43 +1,49 @@
-# Pull Up and Pull Down Resistors
+# Augmenter ou baisser les résistances
 
-When a GPIO pin is in input mode and not connected to 3.3 volts or ground, the pin is said to be **floating**, meaning that it has no fixed voltage level. That's no good for what you want, as the pin will randomly float between `HIGH` and `LOW`. You need to categorically know the state of the pin. So you need to fix the voltage level to `HIGH` or `LOW`, and then make it change **only** when (in the case of this guide) a button is pressed or a pair of wires are manually connected.
+Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre , la broche est dite ** flottante ** , ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW` . Vous devez savoir catégoriquement l'état de la broche . Vous avez donc besoin de fixer la tension à `HIGH` ou `LOW` , puis la faire varier ** seulement ** quand (dans le cas de ce guide) un bouton est pressé ou une paire de câble est reliée manuellement.
 
-This can be done in two ways:
+
+Cela peut être fait de deux façons :
 
 - A pull up circuit
 
-  Wire the GPIO pin to 3.3 volts through a large (10kΩ) resistor so that it always reads `HIGH`. Then we can short the pin to ground by closing the circuit so that the pin will go `LOW`.
+   Câblez la broche GPIO à 3,3 volts via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `HIGH`. Ensuite, nous pouvons court circuiter la broche à la masse en fermant circuit de telle sorte que la broche lira `LOW`. 
+
 
   ![](images/pull_up.png)
 
 - A pull down circuit
 
   Wire the GPIO pin to ground through a large (10kΩ) resistor so that it always reads `LOW`. Then you can short the pin to 3.3 volts by closing the circuit so that it goes `HIGH`. When the circuit is closed, there is a lower resistance path to 3.3 volts, and therefore the pin will read `HIGH`.
+  
+  Câblez la broche GPIO à la masse via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `LOW` . Ensuite, vous pouvez court circuiter la broche à 3,3 volts en fermant le circuit de sorte qu'elle lira `HIGH`. Lorsque le circuit est fermé, il y a un chemin de moindre résistance jusqu'à 3,3 volts, et donc la broche va lire `HIGH` .
 
   ![](images/pull_down.png)
 
-  Note: The 1kΩ R2 resistor is there in both circuits to give the GPIO pin a fail-safe protection, in case we mistakenly set the pin to be in OUTPUT mode.
+Note : La résistance 1k kOhm R2 est là dans les deux circuits pour donner à la broche GPIO une protection de sécurité intégrée, au cas où nous aurions mis par erreur la broche en mode SORTIE.
 
-### An Analogy
-Imagine a gate to a field which has the smoothest hinges ever, the slightest knock, gentle breeze or landing of an insect could move it. You'd never know whether the gate was being opened or closed as it could constantly swing gently between these two positions. If you were to add a spring to the gate to pull it closed, the gate would be held in place, except for a deliberate push which could open it. In this situation the gate's position represents the voltage which can fluctuate, the spring represents the resistor which fixes the voltage either `HIGH` or `LOW`.
+### Analogie
+Imaginez une porte donnant sur un champ qui a des charnières extrêmement lisses, le moindre choc, une douce brise ou l'atterrissage d'un insecte pourrait la déplacer. Vous ne savez jamais si la porte était ouverte ou fermée car elle pourrait constamment balancer doucement entre ces deux positions. Si vous deviez ajouter un ressort à la porte pour la maintenir fermée, la porte serait maintenue en place, sauf dans le cas d'une poussée délibérée qui pourrait l'ouvrir. Dans cette situation, la position de la porte représente la tension qui peut fluctuer, le ressort représente la résistance qui fixe la tension soit `HIGH` ou `LOW`.
 
-Fortunately, the Raspberry Pi has all the above circuitry built in. It can be helpful to imagine that the two resistors `R1` and `R2` from the diagrams above are inside the circuitry of the Raspberry Pi and they can be enabled or disabled as needed. You can select either a pull up or a pull down in your code for each GPIO pin.
+Heureusement, la Raspberry Pi a tous les circuits ci-dessus intégrés. Il peut être utile d'imaginer que les deux résistances `R1` et`R2` des diagrammes ci-dessus sont à l'intérieur des circuits de la Raspberry Pi et ils peuvent être activés ou désactivés autant que nécessaire. Vous pouvez sélectionner un "pull up" ou un "pull down" dans votre code pour chaque broche GPIO.
 
-### Pull up circuit
 
-In this example you are going to use the internal pull up resistor to make GPIO 4 read `HIGH` by default, then you will short it to ground through the wires so that it will read `LOW` when we press the button or touch the wires together, completing the circuit.
+### Circuit Pull up
 
-1. Using jumper wires, connect a push button to the Raspberry Pi GPIO pins as shown below. Take care to use the correct pins. If you don't have a push button, you can use two female-to-male jumper wires in order to manually make contact between ground and the input pin.
+Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour que la GPIO 4 lise `HIGH` par défaut, alors vous allez la court circuiter à la masse à l'aide des câbles de façon à ce qu'elle lise `LOW` quand on appuie sur le bouton ou lorsque les fils se touchent, en complétant le circuit .
+
+1. Utilisez de câbles de connexion , connectez un bouton poussoir aux broches GPIO de la Raspberry Pi comme illustré ci-dessous. Prenez soin d'utiliser les bonnes broches. Si vous ne disposez pas de bouton-poussoir, vous pouvez utiliser deux câbles mâle / femelle afin de faire manuellement le contact entre la masse et la broche d'entrée.
+
 
   ![](images/pull_up_wire.png)
 
-1. Open Idle3 from the main menu.
+2. Ouvrez Idle3 dansl e menu général.
 
 ![Open Idle3](images/open_idle.png)
 
-1. Create a new program from the **File** -> **New Window** option
+3. Créez un nouveau programme en cliquant sur **File** -> **New Window**
 
-1. Enter the code below.
+4. Entrez le code ci-dessous.
   ```python
   import time
   import RPi.GPIO as GPIO
@@ -57,34 +63,36 @@ In this example you are going to use the internal pull up resistor to make GPIO 
       time.sleep(0.5)
   ```
 
-1. Save your program, giving it a sensible name.
+5. Enregistrez votre programme , en lui donnant un nom.
 
-1. Run your program by press the **F5** key
+6. Lancez votre programme en appuyant sur la touche **F5**
 
-1. The text `HIGH` should begin scrolling up the screen. When you press the button (or connect the wires together) for a few seconds you'll see the text `LOW` because you're shorting the pin to ground. Release the button (or disconnect the wires) and it will return to `HIGH` because of the internal pull up resistor.
+7. Le texte `HIGH` devrait commencer à défiler en haut de l'écran. Lorsque vous appuyez sur le bouton (ou connectez les fils ensemble) pendant quelques secondes, vous verrez le texte `LOW` parce que vous êtes en train de court-circuiter la broche à la masse. Relâchez le bouton (ou déconnectez les fils) et il sera de retour à `HIGH` à cause de la résistance interne pull up.
+
 
   ![Pull Up Logic](images/pull_up_screenshot.png)
 
-1. Press `Ctrl - C` to terminate your Python script at any time.
+8. Appuyez sur `Ctrl - C` pour terminer votre script Python à tout moment.
 
 ### Pull down circuit
 
-1. Remove the jumper cables from the Raspberry Pi GPIO pins and reattach them as shown in the diagram below. Take care to use the correct pins.
+1. Retirez les câbles de démarrage des broches GPIO de la Raspberry Pi et rattachez -les comme indiqué dans le schéma ci-dessous. Prenez soin d'utiliser les bonnes broches.
 
   ![](images/pull_down_wire.png)
 
-1. The code required to test the pull down circuit is almost identical to that for the pull up so to save time we will just make a copy of your file and change one thing. Click **File** and **Save as** giving your program a new name.
+2. Le code nécessaire pour tester le cicuit pull down est presque identique à celui du pull up. Afin de gagner du temps, nous allons tout simplement faire une copie de votre fichier et changer une chose. Cliquez sur  **Fichier** et **Enregistrer sous** et donnez à votre programme un nouveau nom.
 
-1. Find the `GPIO.setup` line and change the last parameter from `GPIO.PUD_UP` to `GPIO.PUD_DOWN`. This sets the internal pull down resistor on GPIO 4 so that it will read `LOW` unless it's connected to 3.3 volts.
+3. Trouvez la ligne `GPIO.setup` et changez le dernier paramètre : il faut passer de `GPIO.PUD_UP` à `GPIO.PUD_DOWN`. Ceci définit la résistance interne pull down sur la GPIO 4 de sorte qu'elle lise `LOW` sauf si elle est connectée à 3,3 Volts.
 
   `GPIO.setup(pin, GPIO.IN, GPIO.PUD_DOWN)`
 
-1. Press the **F5** key to run your new program
+4. Appuyez sur la touche **F5** pour exécuter votre nouveau programme.
 
-1. The text `LOW` should begin scrolling up the screen, when you press the button (or connect the wires together) for a few seconds you'll see the text `HIGH` because you're shorting the pin to 3.3 volts. Release the button (or disconnect the wires) and it will return to `LOW` because of the internal pull *down* resistor.
+5. Le texte `LOW` devrait commencer à défiler en haut de l'écran, lorsque vous appuyez sur le bouton (ou connectez les fils ensemble) pendant quelques secondes, vous verrez le texte `HIGH` parce que vous êtes en train de court-circuiter la broche à 3,3 volts. Relâchez le bouton (ou déconnectez les fils ) et il sera de retour à `LOW` à cause de la résistance interne pull dpwn.
+
 
   ![Pull Down Logic](images/pull_down_screenshot.png)
 
-1. Type `Ctrl - C` to terminate your Python script and return to the command line.
+6. Appuyez sur `Ctrl - C` pour terminer votre script Python et revenir à la ligne de commande.
 
-[Back to the worksheet](worksheet.md)
+[Retour vers la feuille de travail](worksheet.md)
