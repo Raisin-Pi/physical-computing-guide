@@ -1,14 +1,14 @@
-# Testing a connected LED in Python
+# Tester une LED connectée à Python
 
-With your circuit complete, you are now ready to write some code to switch the LED on. 
+Avec votre circuit complet, vous êtes maintenant prêt à écrire du code pour allumer la LED.
 
-1. Open Idle3 from the main menu.
+1. Ouvrez Idle3 dans le menu principal.
 
     ![Open Idle3](images/open_idle.png)
 
-1. Create a new program from the **File** -> **New Window** option
+2. Créer un nouveau programme à partir de l'option : **File** -> **New Window**
 
-1. Enter the code below.
+3. Entrez le code ci-dessous.
 
     ```python
     import time
@@ -20,37 +20,39 @@ With your circuit complete, you are now ready to write some code to switch the L
 
     GPIO.setup(led,GPIO.OUT)
     ```
-    The first two lines tells the Python interpreter (the thing that runs the Python code) that it will be using a ‘library’. You will need the `time` library in order to add timings to your program and the `RPi.GPIO` library that will tell the Pi how to work with the Raspberry Pi’s GPIO pins. A ‘library’ gives a programming language extra commands that can be used to do something different that it previously did not know how to do. This is like adding a new channel to your TV so you can watch something different. Each pin on the Pi has several different names, so you need to tell the program which naming convention is to be used in the third line of the code. The second to last line tells Python not to print GPIO warning messages to the screen. The final line tells Python to set up pin 17 as an output.
+    Les deux premières lignes indiquent à l'interpréteur Python (la chose qui exécute le code Python) que nous utiliserons une «bibliothèque» . Vous aurez besoin de la bibliothèque `time` afin d'ajouter des temps à votre programme et de la bibliothèque `RPi.GPIO` qui indiquera à la Pi comment travailler avec les broches GPIO du Raspberry Pi. Une «bibliothèque» donne à un langage de programmation des commandes supplémentaires qui peuvent être utilisées pour faire effectuer des choses qu'elle ne savait pas faire auparavant. C'est comme l'ajout d'une nouvelle chaîne sur votre téléviseur de sorte que vous pouvez regarder quelque chose de différent. Chaque broche sur la Pi a plusieurs noms différents, de sorte que vous devez dire au programme quel nom doit être utilisé dans la troisième ligne du code. Le deuxième à la dernière ligne indique à Python de ne pas montrer les messages d'avertissement GPIO à l'écran. La dernière ligne indique à Python de définir la broche 17 comme une sortie .
 
-1. Underneath the code you have just entered, type:
+
+4. Sous le code que vous venez d'entrer, tapez :
 
     ```python
     print("Light on")
     GPIO.output(led,GPIO.HIGH)
     ```
-    The `print` function prints some information to the terminal. This is handy as it tells you what is happening, so that even if you LED doesn't come on you know that your program is working. If that happens then there might be something wrong with the wiring of your circuit and you should go back through the steps above to check.
+    La fonction `print` imprime des informations sur le terminal. C'est pratique car il vous indique ce qu'il se passe ; ainsi, même si votre LED ne s'allume pas, vous savez que votre programme est en train de travailler. Si cela arrive, il pourrait y avoir une erreur avec le câblage de votre circuit et vous devez revenir en arrière à travers les étapes ci-dessus pour vérifier.
 
-    The next line turns the GPIO pin 17 ‘on’. What this actually means is that this pin is made to provide power of 3.3 volts. This is enough to turn the LED in your circuit on.
+    La ligne suivante "allume" la broche GPIO 17. Cela signifie réellement  que cette broche est faite pour fournir une puissance de 3,3 volts. C'est suffisant pour alumer la LED dans votre circuit.
 
-1. The code so far will turn on the LED; let's add some code to turn it off after a period of time. Below your existing code, type:
+
+5. Le code à ce jour va allumer la LED ; nous allons ajouter un peu de code pour l'éteindre après un certain temps. Dessous votre code actuel, tapez :
 
     ```python
     time.sleep(1)
     print("Light off")
     GPIO.output(led,GPIO.LOW)
     ```
-    The first line adds a pause or sleep. It tells the program to sleep for one second before moving onto the next line in the sequence of code. During this time your LED will be on because you have not told it to do anything else yet. To turn the LED off, you add a line similar to the one that turned GPIO pin 17 on, instead you replace GPIO.HIGH with GPIO.LOW. This will turn the pin off so that it no longer supplies any voltage.
+    La première ligne ajoute une pause ou un délai. Il indique au programme de "dormir" pendant une seconde avant de passer à la ligne suivante dans la séquence de code. Pendant ce temps, votre LED sera allumée parce que vous ne lui avez pas dit de faire quelque chose d'autre encore. Pour éteindre la LED, vous ajoutez une ligne semblable à celle qui a allumé la broche GPIO 17 ; vous remplacez alors GPIO.HIGH avec GPIO.LOW. Cela éteindra la broche parce qu'elle ne fournit plus aucune tension.
 
-1. The final part to add to your program is:
+6. La dernière partie à ajouter à votre programme est :
 
     ```python
     GPIO.cleanup()
     ```
 
-    The GPIO.cleanup() command at the end is necessary to reset the status of any GPIO pins when you exit the program. If you don’t use this, then the GPIO pins will remain at whatever state they were last set to.
+    La commande GPIO.cleanup() à la fin est nécessaire pour réinitialiser l'état de toutes les broches GPIO lorsque vous quittez le programme. Si vous ne l'utilisez pas, les broches GPIO resteront à l'état où elles étaient la fois dernière.
 
-1.	Save your code by clicking on **File** and **Save**.
+7.	Enregistrez votre code en cliquant sur **File** et **Save**.
 
-1. It is now the moment of truth! Click on **Run** and **Run Module** to execute (or run) your code.
+8. C'est maintenant l'heure de vérité ! Cliquez sur **Run** et **Run Module** pour exécuter (ou lancer) votre code.
 
-Back to [Getting started with physical computing](worksheet.md)
+Retour vers [Commencer avec l'informatique Physique](worksheet.md)
