@@ -1,4 +1,4 @@
-# Augmenter ou baisser les résistances
+# Pull up et Pull down les résistances
 
 Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre , la broche est dite ** flottante ** , ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW` . Vous devez savoir catégoriquement l'état de la broche . Vous avez donc besoin de fixer la tension à `HIGH` ou `LOW` , puis la faire varier ** seulement ** quand (dans le cas de ce guide) un bouton est pressé ou une paire de câble est reliée manuellement.
 
