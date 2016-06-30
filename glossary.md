@@ -1,13 +1,13 @@
-# Glossary
+# Glossaire
 
 ## GPIO
 
-General-purpose input/output; in this specific case, GPIO refers to the pins on the Raspberry Pi and what you can do with them. So called because you can use them for all sorts of purposes; most can be used as either inputs or outputs, depending on your program.
+Entrées et sorties universelles : dans ce cas précis, les GPIO font référence aux broches sur le Raspberry Pi et à leur rôle. Elles sont appelées de la sorte parce que vous pouvez les utiliser pour toutes sortes d'usage ; la plupart peuvent être utilisées comme entrées ou sorties, en fonction de votre programme.
 
 ## LED
 
-Light-emitting diode: a small, low-power light source used widely in electronics. Ideal as an introduction to physical computing on the Pi.
+Diode électroluminescente : une petite source de lumière, de faible puissance très utilisée dans l'électronique. Idéal pour s'initier à l'informatique physique sur le Pi.
 
-## Physical computing
+## Informatique physique
 
-Computing that involves tangible things connected to a computer, beyond standard input and output devices like keyboards and monitors. Think buttons, lights, robots, alarms, sensors, home automation, teddy bears called Babbage in near space and so on. We love physical computing because as well as being lots of fun, it's such a powerful teaching and learning tool and encourages creativity, problem solving, and collaboration. Computing **beyond the screen** engages children of all ages, and you can make very cool stuff!
+L'informatique qui implique des choses conrêtes reliées à un ordinateur, au-delà des périphériques d'entrée et de sortie standards comme les claviers et les moniteurs. Pensez aux boutons, lumières, robots, alarmes, capteurs, domotique, ours en peluche appelé Babbage dans l'espace proche et ainsi de suite. Nous aimons l'informatique physique, parce que tout en étant ludique, stimulant, c'est un puissant outil d'apprentissage et encourage la créativité, la résolution de problèmes, et la collaboration. L'nformatique ** au-delà de l'écran ** engage les enfants de tout âge, et vous pouvez faire des choses très cool.
