@@ -39,20 +39,16 @@ L'étape suivante consiste à écrire un programme pour dire à la broche de fon
 
 ### Entrées
 
-GPIO ** sorties ** sont faciles ; ils sont allumés ou éteints , HAUT ou BAS , 3v3 ou 0V . ** Entrées ** sont un peu plus compliqué à cause de la façon dont fonctionnent les appareils numériques . Bien qu'il puisse sembler raisonnable juste pour connecter un bouton à travers une broche d'entrée et une broche de masse , le Pi peut se confondre quant à savoir si le bouton est activé ou désactivé . Il pourrait fonctionner correctement, il ne pourrait pas. Il est un peu comme flottent dans l'espace lointain ; sans référence , il serait difficile de dire si vous alliez vers le haut ou vers le bas, ou même ce que vers le haut ou vers le bas signifiait !
+Les ** sorties ** GPIOsont faciles ; elles sont allumées ou éteintes , HIGH or LOW, 3.3 V ou 0 V. Les ** Entrées ** sont un peu plus complexes à cause de la façon dont fonctionnent les appareils numériques. Bien qu'il puisse sembler simple de juste connecter un bouton à travers une broche d'entrée et une broche de masse, la Pi peut confondre quant à savoir si le bouton est activé ou désactivé. Il pourrait fonctionner correctement, ou pas. C'est est un peu comme flotter dans un espace profond ; sans référence, il serait difficile de dire si vous allumez ou si vous éteignez, ou même de savoir ce que signifie allumer ou éteindre !
 
-Ceci est la raison pour laquelle vous verrez des phrases comme "pull up" et " tirer vers le bas " dans les didacticiels Raspberry Pi GPIO . Il est une façon de donner à la broche d'entrée une référence de sorte qu'il sait avec certitude quand une entrée est reçue .
+Ceci est la raison pour laquelle vous verrez des phrases comme "remonter" (pull up) and "descendre" (pull down) dans les tutoriels concernant les GPIO Raspberry Pi. C'est une façon de donner à la broche d'entrée une référence de sorte qu'il sache avec certitude quand une entrée est reçue.
 
-GPIO **outputs** are easy; they are on or off, HIGH or LOW, 3v3 or 0v. **Inputs** are a bit trickier because of the way that digital devices work. Although it might seem reasonable just to connect a button across an input pin and a ground pin, the Pi can get confused as to whether the button is on or off. It might work properly, it might not. It's a bit like floating about in deep space; without a reference it would be hard to tell if you were going up or down, or even what up or down meant!
 
-This is why you will see phrases like "pull up" and "pull down" in Raspberry Pi GPIO tutorials. It's a way of giving the input pin a reference so it knows for certain when an input is received.
-
-If you'd like to have a go at using the GPIO as an input then have a look at our [burping jelly baby](https://www.raspberrypi.org/learning/burping-jelly-baby/) and [quick reaction game](http://www.raspberrypi.org/learning/quick-reaction-game/) tutorials for Python, or a [reaction game](http://www.raspberrypi.org/learning/reaction-game/) for Scratch.
+Si vous souhaitez de l'aide pour utiliser les GPIO comme des entrées, jetez un oeil à notre [burping jelly baby](https://www.raspberrypi.org/learning/burping-jelly-baby/) et [quick reaction game](http://www.raspberrypi.org/learning/quick-reaction-game/) tutoriels pour Python, ou une [reaction game](http://www.raspberrypi.org/learning/reaction-game/) pour Scratch.
 
 ## Le début de quelque chose d'étonnant
 
-Nous espérons que cela vous a encouragé à se lancer à l'informatique physique à l'aide de la GPIO Pi ; il est vraiment pas aussi difficile qu'il y paraît. Tout commence avec une LED simple, mais il peut vous emmener dans des endroits incroyables . Ne pas sous-estimer le plaisir , la créativité et le sens de la réalisation , vous pouvez obtenir à partir d'un petit ordinateur et un tas d' épingles. S'amuser! Et si vous faites quelque chose de cool , s'il vous plaît laissez-nous savoir .
+Nous espérons que cela vous a encouragé à vous lancer dans l'informatique physique à l'aide de la GPIO Pi; ce n'est vraiment pas aussi difficile que ça n'y paraît. Tout commence avec une LED simple, mais cela peut vous emmener dans des endroits incroyables. Ne sous-estimez pas le plaisir pris, la créativité et le sens de la réalisationque vous pouvez obtenir à partir d'un petit ordinateur et un tas d'épingles. Amusez-vous ! Et si vous faites quelque chose de cool, s'il vous plaît, partagez le.
 
-We hope that this has encouraged you to have a go at physical computing using the Pi's GPIO; it's really not as daunting as it looks. It all starts with a simple LED, but it can take you to incredible places. Do not underestimate the fun, creativity and sense of achievement you can get from a little computer and a bunch of pins. Have fun! And if you do make something cool, please let us know. 
 
 Retur vers [Commencer avec l'informatique Physique](worksheet.md)
