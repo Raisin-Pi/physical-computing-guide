@@ -1,39 +1,39 @@
-# Testing a connected LED in Scratch
+# Tester une LED connectée à Scratch
 
-1.  With your LED circuit complete, you are now ready to use Scratch to switch the LED on. Launch the program **Scratch** by clicking on **Menu** followed by **Programming** and selecting **Scratch**.
+1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour allumer la LED. Lancez le programme ** Scratch ** en cliquant sur Menu ** ** puis ** Programmation ** et en sélectionnant ** Scratch ** .
 
  ![](images/scratch-icon.png)
 
- Our version of Scratch on Raspbian is extra special. It allows you to access and control the GPIO pins.
+ Notre version de Scratch sur Raspbian est très spéciale. Elle vous permet d'accéder et de contrôler les broches GPIO.
 
     ![](images/Scratch-interface.png "The Scratch Interface")
 
-1.  Click on **Control** in the top left display. Drag the ![Green Flag](images/green_flag.png) block onto the scripts area.
+2.  Cliquez sur **Control** sur l'écran en haut à gauche . Faites glisser le bloc ![Green Flag](images/green_flag.png) sur la zone de scripts.
 
-1. Drag a `broadcast` block to your scripts area and attach it to the ![Green Flag](images/green_flag.png) block. Click on the drop down menu on the broadcast block and select **new**.
+3. Faites glisser un bloc `broadcast` sur votre zone de scripts et attacher le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
+    
+Dans le message nommé type de boîte `gpioserveron`, cette instruction indique à Scratch d'activer ses fonctions GPIO.
 
-    In the message name box type `gpioserveron` This instruction will tell the Scratch to activate its GPIO functions.
+4. Faites glisser un autre bloc `broadcast` sur votre zone de scripts et attachez le en bas. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
-1. Drag another `broadcast` block to your scripts area and attach it to the bottom. Click on the drop down menu on the broadcast block and select **new**.
-
-    In the message name box type `config17output` This instruction will tell the Raspberry Pi to set GPIO pin 17 as an output.
+    Dans le message nommé type de boîte `config17output`, cette instruction indique à la Raspberry Pi de définir la broche GPIO 17 en tant que sortie.
 
     ![](images/scratch_config.png)
 
-1. Drag another `broadcast` block to your scripts area and attach it to the bottom of first broadcast block. Click on the drop down menu on the broadcast block and select **new**.
+5. Faites glisser un autre bloc `broadcast` sur votre zone de scripts et attachez le en bas du premier bloc de diffusion. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
-    In the message name box type `gpio17on` This instruction will tell the Raspberry Pi to set GPIO pin 17 `HIGH`.
+    Dans le message nommé type de boîte `gpio17on`, cette instruction indique à la Raspberry Pi de régler la broche GPIO 17 à `HIGH`.
 
-1. Drag a `wait 1 secs` block onto the scripts area and connect it to the previous broadcast block.
+6. Faites glisser un bloc `wait 1 secs` sur votre zone de scripts et reliez le au bloc de diffusion précédent.
 
-1. Drag one last `broadcast` block onto your scripts area and connect it to the `wait 1 secs` block. Click on the drop down menu on the broadcast block and select **new**.
+7. Faites glisser un dernier bloc `broadcast` sur votre zone de scripts et reliez le au bloc `wait 1 secs`. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
-    In the message name box type `gpio17off` This will switch off the LED.
+    Dans le message nommé type de boîte `gpio17off`, cela éteindra la LED.
 
-1. Save your work so far by clicking on **File** and **Save As**. Name your file `Test LED` and click **OK**.
+8. Enregistrez votre travail jusqu'à présent en cliquant sur **File** puis **Save As**. Nommez votre fichier `Test LED` et cliquez sur **OK**.
 
-1. Test your program by clicking on the ![Green Flag](images/green_flag_icon.png) icon. You should see the LED come on for 1 second and then turn off.
+9. Testez votre programme en cliquant sur l'icône ![Green Flag](images/green_flag_icon.png). Vous devriez voir la LED s'allumer pendant 1 seconde, puis éteindre.
 
     ![](images/scratch_complete.png)
 
-Back to [Getting started with physical computing](worksheet.md)
+Retour vers [Commencer avec l'informatique Physique](worksheet.md)
