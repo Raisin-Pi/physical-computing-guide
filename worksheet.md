@@ -1,150 +1,164 @@
-# Getting Started with Physical Computing on the Raspberry Pi
+# Commencer avec l'Informatique Physique avec la Raspberry Pi
 
-One powerful feature of the Raspberry Pi is the row of GPIO pins along the top edge of the board. GPIO stands for General-Purpose Input/Output. These pins are a physical interface between the Pi and the outside world. At the simplest level, you can think of them as switches that you can turn on or off (input) or that the Pi can turn on or off (output).
+Une caractéristique puissante de la Raspberry Pi est la rangée de broches GPIO le long du bord supérieur de la carte. Les GPIO représentent les entrées et sorties universelles. Ces broches sont une interface physique entre Pi et le monde extérieur. De manière simplifiée, vous pouvez les comparer à des interrupteurs que vous pouvez allumer ou éteindre (entrée) ou que le Pi peut allumer ou éteindre (sortie).
 
-The GPIO pins are a way in which the Raspberry Pi can control and monitor the outside world by being connected to electronic circuits. The Pi is able to control LEDs, turning them on or off, or motors, or many other things. It is also able to detect whether a switch has been pressed, or temperature, or light. We refer to this as physical computing.
+Les broches GPIO sont un moyen avec lequel le Raspberry Pi peut contrôler et surveiller le monde extérieur en étant connecté à des circuits électroniques. Le Pi est capable de contrôler des LED, les allumer ou les éteindre, ou des moteurs , ou bien d'autres éléments. Il est aussi capable de détecter si un interrupteur a été activé, ou détecter la température, la lumière. Nous appelons cela l'informatique physique.
 
 ## GPIO
-Models A+, B+ and Pi 2 have 40 pins that look like this:
+Les modèles A +, B +, et Pi 2 ont 40 broches qui ressemblent à ceci :
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
-These pins are a physical interface between the Raspberry Pi and the outside world. You can program the Raspberry Pi to switch devices on and off (output), or receive data from sensors and switches (input). Of the 40 pins, 26 are GPIO pins and the others are power or ground pins (plus two ID EEPROM pins which you should not play with unless you know your stuff!)
+Ces broches sont une interface physique entre la Pi et le monde extérieur. De manière très simple, vous pouvez penser à elles comme des interrupteurs que vous pouvez activer ou désactiver (entrée) ou que la Pi peut activer ou désactiver (sortie). Sur les 40 broches, 26 sont des broches GPIO et les autres correpondent aux sources d'alimentation ou à la masse (plus deux broches ID EEPROM, auxquelles vous ne devriez pas toucher, sauf si vous êtes expert en la matière).
 
 ![GPIO layout](images/gpio-numbers-pi2.png)
 
-Models A and B have only 26 pins, and look like this:
+Les modèles A et B ont seulement 26 broches et ressemblent à ceci :
 
 ![](images/gpio-pins.jpg)
 
-Note that the numbering of the GPIO pins is rather unusual. This is explained in the section on pin numbering, below.
+A noter que la numérotation des broches GPIO est assez inhabituelle. Elle est expliquée dans la section ci-dessous.
 
-## What are they for? What can I do with them?
+## À quoi servent-elles ? Que puis-je faire avec ?
 
-You can program the pins to interact in amazing ways with the real world. Inputs don't have to come from a physical switch; it could be input from a sensor or a signal from another computer or device, for example. The output can also do anything, from turning on an LED to sending a signal or data to another device. If the Raspberry Pi is on a network, you can control devices that are attached to it from almost anywhere, and those devices can send data back. Connectivity and control of physical devices over the internet is a powerful and exciting thing, and the Raspberry Pi is ideal for this. There are lots of brilliant examples of physical computing on [our blog](http://www.raspberrypi.org/blog/).
+Vous pouvez programmer les broches d'pour interagir de manière incroyable avec le monde réel. Les entrées ne doivent pas provenir d'un interrupteur physique; cela peut être un capteur ou un signal provenant d'un autre ordinateur ou de périphériques, par exemple. La sortie peut aussi faire de nombreuses choses : allumer une LED, envoyer un signal ou bien des données vers un autre appareil. Si le Raspberry Pi est sur un réseau, vous pouvez contrôler des périphériques qui y sont associés de presque partout et ces appareils peuvent envoyer des données en retour. La connectivité et le contrôle des périphériques physiques sur Internet est une chose puissante et excitante, et le Raspberry Pi est idéal pour cela. Il y a beaucoup d'exemples brillants à propos de l'informatique physique sur [our blog](http://www.raspberrypi.org/blog/).
 
-## How the GPIO pins work
+## Comment les broches GPIO fonctionnent ?
 
-### Output
+### Sorties
 
-**WARNING**: If you follow the instructions, then messing about with the GPIO is safe and fun. Randomly plugging wires and power sources into your Pi, however, may kill it. Bad things can also happen if you try to connect things to your Pi that use a lot of power; LEDs are fine, motors are not. If you are worried about this, then you might want to consider using an add-on board such as the [Explorer HAT](https://shop.pimoroni.com/products/explorer-hat) until you are confident enough to use the GPIO directly.
+**Attention**: Si vous suivez les instructions, alors bricoler avec les GPIO sera sûr et amusant. Brancher aléatoirement des câbles et des sources d'alimentation sur votre Pi peut l'endommager ou la casser. Des effets néfastes peuvent également se produire si vous essayez de connecter les choses qui utilisent beaucoup de puissance à votre Pi ; Les LED sont très bien, les moteurs ne le sont pas. Si vous êtes inquiet à ce sujet, alors vous devriez envisager d'utiliser une carte supplémentaire comme la [Explorer HAT](https://shop.pimoroni.com/products/explorer-hat) jusqu'à ce que vous soyez assez confiant pour utiliser les GPIO directement.
 
-Ignoring the Pi for a moment, one of the simplest electrical circuits that you can build is a battery connected to a light source and a switch (the resistor is there to protect the LED):
+Ignoraez la Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
 
 ![Simple circuit](images/simple-circuit.png)
 
-When we use a GPIO pin as an output, the Raspberry Pi replaces both the switch and the battery in the above diagram. Each pin can turn on or off, or go `HIGH` or `LOW` in computing terms. When the pin is `HIGH` it outputs 3.3 volts (3v3); when the pin is `LOW` it is off.
+Lorsque nous utilisons une broche GPIO comme sortie, la Raspberry Pi remplace ** à la fois l'interrupteur et la batterie ** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts ( 3V3 ) ; lorsque la broche est ` LOW`, il est éteint.
 
-Here's the same circuit using the Raspberry Pi. The LED is connected to a GPIO pin (which can output +3v3) and a ground pin (which is 0v and acts like the negative terminal of the battery):
+Voici le même circuit en utilisant le Raspberry Pi. La LED est reliée à une broche GPIO (qui peut produire 3.3 V) et une broche de terre (qui correspond à 0 V et agit comme la borne négative de la batterie) :
 
 ![GPIO wth LED](images/gpio-led-pi2.png)
 
-The next step is to write a program to tell the pin to go `HIGH` or `LOW`. Here's an example using [Python](test-led-python.md) and here's how to do it in [Scratch](test-led-scratch.md).
+L'étape suivante consiste à écrire un programme pour dire à la broche de fonctionner plus fortement ou plus légèrement (`HIGH` or `LOW`). Voici un exemple utilisant [Python](test-led-python.md), et voici comment le faire dans [Scratch](test-led-scratch.md)..
 
-### Input
+### Entrées
 
-GPIO **outputs** are easy; they are on or off, `HIGH` or `LOW`, 3v3 or 0v. **Inputs** are a bit trickier because of the way that digital devices work. Although it might seem reasonable just to connect a button across an input pin and a ground pin, the Pi can get confused as to whether the button is on or off. It might work properly, it might not. It's a bit like floating about in deep space; without a reference it would be hard to tell if you were going up or down, or even what up or down meant!
+Les ** sorties ** GPIO sont faciles ; elles sont allumées ou éteintes, HIGH or LOW, 3.3 V ou 0 V. Les ** Entrées ** sont un peu plus complexes à cause de la façon dont fonctionnent les appareils numériques. Bien qu'il puisse sembler simple de juste connecter un bouton à travers une broche d'entrée et une broche de masse, la Pi peut confondre quant à savoir si le bouton est activé ou désactivé. Il pourrait fonctionner correctement, ou pas. C'est est un peu comme flotter dans un espace profond ; sans référence, il serait difficile de dire si vous allumez ou si vous éteignez, ou même de savoir ce que signifie allumer ou éteindre !
 
-This is why you will see phrases like "pull up" and "pull down" in Raspberry Pi GPIO tutorials. It's a way of giving the input pin a reference so it knows for certain when an input is received.
+C'est la raison pour laquelle vous verrez des phrases comme "remonter" (pull up) and "descendre" (pull down) dans les tutoriels concernant les GPIO Raspberry Pi. C'est une façon de donner à la broche d'entrée une référence de sorte qu'il sache avec certitude quand une entrée est reçue.
 
-## GPIO Pin Numbering
 
-When programming the GPIO pins there are two different ways to refer to them: GPIO numbering and physical numbering.
+## La numérotation des broches GPIO
 
-### GPIO numbering
+Lors de la programmation des broches GPIO, il y a deux façons de se référer à elles : numérotation GPIO et numérotation physique.
 
-These are the GPIO pins as the computer sees them. The numbers don't make any sense to humans, they jump about all over the place, so there is no easy way to remember them. However, you can use a printed reference or a reference board that fits over the pins to help you out.
+### La numérotation GPIO
+
+Ce sont les broches GPIO telles que l'ordinateur les voit. Les chiffres n'ont pas de sens pour les humains, ils défilent partout, donc il n'y a aucun moyen de s'en rappeler. Cependant, vous pouvez utiliser une référence imprimée ou une carte de référence qui se place sur les broches pour vous aider.
 
 ![GPIO layout](images/gpio-numbers-pi2.png)
 
-### Physical numbering
+### La numérotation physique
 
-The other way to refer to the pins is by simply counting across and down from pin 1 at the top left (nearest to the SD card). This is 'physical numbering' and it looks like this:
+L'autre façon de se référer aux broches est en comptant simplement "across and down" à partir de la broche 1 en haut à gauche (la plus proche de la carte SD) . C'est la « numérotation physique» et ça ressemble à ceci :
 
 ![GPIO layout](images/physical-pin-numbers.png)
 
-### Which system should I use?
+### Quel système dois-je utiliser ?
 
-Beginners and young children may find the physical numbering system simpler: you simply count the pins. You'll still need a diagram like the one above to know which are GPIO pins, which are ground, and which are power though.
+Les débutants et les jeunes enfants peuvent trouver le système de numérotation physique plus simple : vous comptez simplement les broches. Vous aurez toujours besoin d'un schéma comme celui ci-dessus pour savoir quelles sont les broches GPIO, quelles sont celles qui sont à la masse , qui ont de la puissance.
 
-Generally we recommend using the GPIO numbering. It's good practice and most resources use this system. Take your pick though: as long as you use the same system within a program then all will be well. Note that pin numbering can also depend on what programming language you are using.
+En général, nous vous recommandons d'utiliser la numérotation GPIO. C'est une bonne pratique et la plupart des ressources utilisent ce système. Faites votre choix  : tat que vous utilisez le même système dans un programme, alors tout ira bien. Notez que la numérotation des broches peut aussi dépendre de ce langage de programmation que vous utilisez.
 
-For more details on the advanced capabilities of the GPIO pins see Gadgetoid's [interactive pinout diagram](http://pi.gadgetoid.com/pinout).
 
-### Pull Up and Pull Down Resistors
-When a GPIO pin is in input mode and not connected to ground or 3v3, the pin is said to be 'floating', meaning that it has no fixed voltage level. That's no good for what we want, as the pin will randomly float between `HIGH` and `LOW`. We need to categorically know that the wires have touched. So we need to fix the voltage level to `HIGH` or `LOW`, and then make it change only when the we touch the wires together. You can learn more about pull up and pull down resistors in [this guide](pull_up_down.md).
+Pour plus de détails sur les fonctionnalités des broches GPIO, allez voir : [interactive pinout diagram](http://pi.gadgetoid.com/pinout).
 
-# Components
+### Pull up et Pull down les résistances
 
-## What is a breadboard?
-You can think of a breadboard as being something like an artist's canvas, but without any of what we create on the canvas being permanent. While it is possible to make a circuit without a breadboard, it keeps components organised rather than being a mess of wires without clear indication of how every wire connects to each other. Secondly, if you were to take a circuit and design it to fit on a PCB, a breadboard allows you to organise components logically before making the design permanent.
+Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre, la broche est dite ** flottante **, ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW` . Nous devons savoir catégoriquement que les fils ont touché. Nous avons donc besoin de fixer la tension à `HIGH` ou `LOW`, puis la faire varier seulement lorsque l'on fait toucher les fils ensemble. Vous pouvez en apprendre plus sur "pull up and pull down" des résistances dans [this guide](pull_up_down.md).
+
+# Composants
+
+## Qu'est ce qu'une carte de prototypage ?
+
+Vous pouvez penser à une carte de prototypage comme étant la toile d'un artiste, mais sans qu'aucune création sur la toile ne soit permanente. Bien qu'il soit possible de faire un circuit sans carte de prototypage (breadboard), elle permet d'organiser les composants plutôt que d'avoir pleins de fils en désordre sans indication claire de la façon dont chaque fil est relié les uns aux autres. Deuxièmement, si vous deviez réaliser un circuit et le dessiner pour l'adapter sur un PCB, un breadboard vous permet d'organiser des composants logiquement avant de faire la conception permanente.
+
 
 ![](images/breadboard.png)
 
-From an electronics perspective, horizontal lines of holes are connected together inside the breadboard by metal connections, with the components inside the holes clipping onto each connection.
+Du point de vue de l'électronique, des lignes horizontales de trous sont reliées entre elles à l'intérieur du breadboard par des liaisons métalliques, avec à l'intérieur des composants, des trous sur chaque connexion.
 
-Along the sides of the breadboard are power and ground rails - these connect vertically instead of horizontally, and are used to tidy up the circuits by being a union point for any power connections. It's also safer this way, as all power can be disconnected from components by pulling the power source's connection to these rails, rather than pulling the connection to each individual component requiring power.
+Sur les côtés de la carte de prototypage, il y a des rails d'alimentation et de masse - ceux-ci se connectent verticalement au lieu d'horizontalement, et sont utilisés pour ranger les circuits en étant un point d'union pour toutes les connexions électriques. C'est également plus sûr de cette façon, que toute la puissance peut être déconnectée des composants en tirant la connexion de la source d'alimentation à ces rails, plutôt que de tirer la liaison de chaque composant nécessitant de la puissance.
 
-The name breadboard comes from the the fact that engineers in the past would prototype circuits on bits of wood. Often these bits of wood would be breadboards they'd pinch from the kitchen!
+Le nom breadboard provient du fait que les ingénieurs dans le passé voulaient prototyper des circuits sur des bouts de bois. 
 
 ![Early Breadboard](images/early_breadboard.jpg)
 
-## What is a resistor?
+## Qu'est-ce qu'une résistance ?
 
-Resistors are a way of limiting the amount of electricity going through a circuit; specifically, they limit the amount of **current** that is allowed to flow. The measure of resistance is the **Ohm (Ω)**, and the larger the resistance, the more it limits the current.
+Les résistances sont un moyen de limiter la quantité d'électricité qui passe dans un circuit ; plus précisément, ils limitent la quantité de **courant** qui est autorisée à circuler. La mesure de la résistance est **ohms (Ω)**, et plus la valeur de la résistance est élevée, plus on limite le courant.
 
 ![](images/resistor-330r.png)
 
-The value of a resistor is marked with coloured bands along the length of the resistor body. A resistor commonly used in LED projects has the resistance value of a 330Ω. You can identify the 330Ω resistors by the colour bands along the body. The colour coding will depend on how many bands are on the resistors supplied: If there are four colour bands, they will be orange, orange, brown, and then gold. If there are five bands, then the colours will be orange, orange, black, black, brown.
+La valeur d'une résistance est marquée par des bandes de couleur le long de la longueur du corps de résistance. Une résistance, communément utilisée dans des projets avec des LEDs, a une valeur de résistance de 330 Ω. Vous pouvez identifier les résistances de 330 Ω par les bandes de couleur le long du corps. Le codage couleur dépendra de combien de bandes sont sur les résistances : s'il y a quatre bandes de couleur, elles seront orange, orange, marron et or. S'il y a cinq bandes, les couleurs seront orange, orange, noir, noir, marron.
 
-You have to use resistors to connect LEDs up to the GPIO pins of the Raspberry Pi. The Raspberry Pi can only supply a small current (about 60mA). The LEDs will want to draw more, and if allowed to they will burn out the Raspberry Pi. Therefore putting the resistors in the circuit will ensure that only this small current will flow and the Pi will not be damaged. It does not matter which way round you connect the resistors. Current flows in both directions through them.
+Vous devez utiliser des résistances pour connecter les LED sur les broches GPIO de la Raspberry Pi. La Raspberry Pi ne peut fournir qu'un courant faible (environ 60mA). Les LEDs veulent tirer plus, et si on les laisse faire, elles brûleront la Raspberry Pi. Par conséquent, mettre les résistances dans un circuit fera en sorte que seulement un petit courant circule et que la Pi ne sera pas endommagée. Le sens de connexion des résistaces importeent peu. Le courant circule dans les deux sens à travers elles.
 
-## What is an LED?
+## Qu'est ce qu'une LED?
 
 ![](images/led.png)
 
-LED stands for Light Emitting Diode. An LED glows when electricity is passed through it. When you pick up the LED, you will notice that one leg is longer than the other.The longer leg (known as the anode), is always connected to the positive supply of the circuit. The shorter leg (known as the cathode) is connected to the negative side of the power supply, known as ground. LEDs will only work if power is supplied the correct way round (i.e. if the polarity is correct). You will not break the LEDs if you connect them the wrong way round, but they will not glow. If you find that they do not light in your circuit, it may be because they have been connected the wrong way round.
+LED signifie diode électroluminescente (Light Emitting Diode). Une LED brille quand du courant électrique passe à travers elle. Lorsque vous décrochez le LED, vous remarquerez qu'une branche est plus longue que l'autre. La plus grande branche (connue sous le nom de l'anode) est toujours connectée à la borne + positive du circuit. La branche la plus courte (appelée la cathode) est connectée au côté négatif de l'alimentation électrique : la masse ou la terre. LesLED ne fonctionnent que si l'alimentation est fournie dans le bon sens (à savoir si la polarité est correcte). Vous ne casserez pas les LEDs si vous les connectez dans le mauvais sens, mais elles ne brilleront pas.
 
-### Why does the LED shine?
+### Pourquoi la LED brille ?
 
-When a circuit is plugged into the Raspberry Pi GPIO pins, electricity flows through the circuit. The flow is called the current. The LED lights up only when electric current flows from the long leg through the bulb to the short leg. The resistor reduces the amount of electric current passing through the circuit. This protects the LED from breaking, as a high current will make the light shine more brightly and then stop working.
+Quand un circuit est branché sur les broches GPIO de la Raspberry Pi, l'électricité circule à travers le circuit. Le flux est appelé le courant. La LED est allumée uniquement lorsque le courant électrique circule de la longue branche à travers l'ampoule jusqu'à la branche courte. La résistance diminue la quantité de courant électrique passant à travers le circuit. Ceci protège la LED de la casse.
+
 
 - [Connecting LEDs without a breadboard](connect-led.md)
 - [Connecting an LED with a breadboard](connect-leds.md)
 - [Testing a connected LED in Python](test-led-python.md)
 - [Testing a connected LED in Scratch](test-led-scratch.md)
 
-## What is a push button?
-A push button will complete a circuit when the button is pressed. What that means is that a current will not flow across the button until it is pressed. When it is released, the circuit will be ‘broken’.
+## Qu'est ce qu'un bouton poussoir ?
+Un bouton poussoir fermera un circuit lorsque le bouton est enfoncé. Cela signifie que le courant circule à travers le circuit seulement lorsqu'on appuie sur le bouton. Quand il est libéré, le circuit sera « ouvert ».
 
 ![](images/tactile-push-button.png)
 
-## What is a jumper wire?
-Jumper wires are used on breadboards to ‘jump’ from one connection to another. Commonly, jumper wires have different connectors on each end. There are three types of jumper wires:
+## Qu'est-ce qu'un câble de connexion ?
+
+Les câbles de connexion sont utilisés sur breadboards pour passer d'une connexion à un autre . Généralement, les câbles de connexion disposent de connecteurs différents à chaque extrémité. Il existe trois types de câbles de connexion :
+
 
 | | | |
 |:-------|---|:---|
-| **Male to Male** | ![](images/jumper-male-to-male.png) | Both ends have a 'pin' that can be used with breadboards. |
-| **Male to Female** | ![](images/jumper-male-to-female.png) | The end with the ‘pin’ will go into a Breadboard. The end with the piece of plastic with a hole in it will go onto the Raspberry Pis GPIO pins. |
-| **Female to female** | ![](images/jumper-female-to-female.png) | Both ends have a piece of plastic with a hole in it and can be used with Raspberry Pis GPIO pins and components. |
+| **Mâle / Mâle** | ![](images/jumper-male-to-male.png) | Les deux extrémités ont une « broche » qui peut être utilisée sur une carte de prototypage. |
+| **Mâle / femelle** | ![](images/jumper-male-to-female.png) | L'extrémité avec la « broche » ira sur une carte de prototypage.  L'extrémité avec le morceau de plastique avec un trou ira sur les broches GPIO de la Raspberry Pi. |
+| **Femelle / femelle** | ![](images/jumper-female-to-female.png) | Les deux extrémités ont un morceau de plastique avec un trou dedans et peuvent être utilisés avec des broches GPIO et des composants Raspberry Pi.  |
 
-We use jumper wires to connect to the GPIO pins on the Raspberry Pi and breadboards. It's a really quick and simple way to get started making simple circuits.
+Nous utilisons des câbles de liaison pour relier les broches GPIO sur la Raspberry Pi et les cartes de prototypage. C'est vraiment un moyen simple et rapide pour commencer à faire des circuits simples.
 
-## What is a PIR Motion Sensor?
-**PIR** stands for **Passive Infrared**. It's a type of sensor that you would most often find in the corners of rooms for burglar alarm systems. All objects whose temperatures are above absolute zero emit infrared radiation. Infrared wavelengths are not visible to the human eye, but they can be detected by the electronics inside one of these modules.
 
-The sensor is regarded as passive because it doesn't send out any signal in order to detect movement. It adjusts itself to the infrared signature of the room it is in and then watches for any changes. Any object moving through the room will disturb the infrared signature, and will cause a change to be noticed by the PIR module.
+## Qu'est-ce qu'un détecteur de mouvement PIR ?
+
+**PIR** signifie **infrarouge passif**. C'est un type de capteur que vous aimeriez le plus souvent trouver dans les coins des pièces pour les systèmes d'alarme antivol. Tous les objets dont les températures sont au-dessus du zéro absolu émettent un rayonnement infrarouge. Les longueurs d'onde infrarouges ne sont pas visibles pour l'oeil humain, mais elles peuvent être détectées par le système électronique à l'intérieur de l'un de ces modules.
+
+Le capteur est considéré comme passif, car il n'envoie pas de signal pour détecter le mouvement. Il se règle à la signature infrarouge de la pièce dans laquelle il est et ensuite montre pour tout changement. Tout objet se déplaçant à travers la pièce va perturber la signature infrarouge, et provoquer un changement qui sera remarquée par le module PIR .
+
 
 ![](images/pir_module.png)
 
-We don't need to worry about its inner workings. What we're interested in are the three pins on it; we can connect those to the Raspberry Pi GPIO pins. One pin is for +5 volts, one pin is for ground and the other is the sensor pin (the middle pin on our Pi). This sensor pin will receive power whenever motion is detected by the PIR module. We can then see that happening on the Raspberry Pi and take action accordingly.
+Il ne faut pas se soucier de son fonctionnement interne. Ce qui nous intéressent sont les trois axes sur elle ; nous pouvons les connecter aux broches GPIO de la Raspberry Pi. Une broche est pour +5 volts, une broche est pour la mase et l'autre est la broche du capteur (la broche centrale sur notre Pi). Cette broche de capteur est alimentée chaque fois que le mouvement est détecté par le module PIR. On peut alors voir que cela se produit sur la Raspberry Pi et créer des actions en conséquence.
+
 
 - [Connecting a PIR sensor](connect-pir.md)
 - [Test a PIR sensor with Python](test-pir-python.md)
 - [Test a PIR sensor with Scratch](test-pir-scratch.md)
 
-## What next?
+## Quoi d'autre ?
 
-### The start of something amazing
-We hope that this has encouraged you to have a go at physical computing using the Pi's GPIO; it's really not as daunting as it looks. It all starts with a simple LED, but it can take you to incredible places. Do not underestimate the fun, creativity, and sense of achievement you can get from a little computer and a bunch of pins. Have fun! And if you do make something cool please let us know. 
-- Why not use your new found physical computing knowledge to complete one of our [make resources](https://www.raspberrypi.org/resources/make/)?
+### Le début de quelque chose d'étonnant
+
+Nous espérons que cela vous a encouragé à vous lancer dans l'informatique physique à l'aide de la GPIO Pi; ce n'est vraiment pas aussi difficile que ça n'y paraît. Tout commence avec une LED simple, mais cela peut vous emmener dans des endroits incroyables. Ne sous-estimez pas le plaisir pris, la créativité et le sens de la réalisationque vous pouvez obtenir à partir d'un petit ordinateur et un tas d'épingles. Amusez-vous ! Et si vous faites quelque chose de cool, s'il vous plaît, partagez le.
+
+- Pourquoi ne pas utiliser vos nouvelles connaissances sur l'informatique physique pour compléter un de nos [make resources](https://www.raspberrypi.org/resources/make/)?
