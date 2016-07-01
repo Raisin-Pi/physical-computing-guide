@@ -1,20 +1,21 @@
-# Test the PIR motion sensor in Python
+# Tester un détecteur de mouvement (PIR) connecté à Python
 
-We're going to use the Python programming language to write some code that will detect movement and print out some text. When movement is detected the PIR motion sensor applies power to its OUT pin, which we have connected to GPIO pin 4 on the Pi. So in our code we just need to continually check pin 4 to see if it has power or not.
+Nous allons utiliser le langage de programmation Python pour écrire du code qui permet de détecter des mouvements et imprimer un texte. Lorsque le mouvement est détecté, le détecteur de mouvement PIR mets de la puissance à sa broche OUT, que nous avons connectée à à la broche GPIO 4 sur la Pi. Donc, dans notre code, nous avons juste besoin de vérifier en permanence la broche 4 pour voir si elle a de la puissance ou non.
 
-If a pin has power we call it `HIGH` and if not we call it `LOW`.
+Si une broche a de la puissance, nous appelons ça `HIGH` et sinon nous appelons cela `LOW`.
 
-The program is pretty simple. We will first set up the Raspberry Pi GPIO pins to allow us to use pin 4 as an input; it can then detect when the PIR module sends power. We need to continually check the pin for any changes, so a `while True` loop is used for this. This is an infinite loop so the program will run continuously unless we stop it manually with `Ctrl + C`.
+Le programme est assez simple. Nous allons d'abord mettre en place les broches GPIO Raspberry Pi pour nous permettre d'utiliser la broche 4 comme entrée ; elle peut alors détecter lorsque le module PIR envoie de la puissance. Nous avons besoin de vérifier en permanence la broche pour tout changement, donc une boucle `while true` est utilisée pour cela. Ceci est une boucle infinie pour que le programme fonctionne en permanence à moins que nous l'arrêtions manuellement avec `Ctrl + C`.
 
-We then use two Boolean (True or False) variables for the previous and current states of the pin, the previous state being what the current state was the preceding time around the loop. Inside the loop we compare the previous state to the current state to detect when they're different. We don't want to keep displaying a message if there has been no change.
+Nous utilisons ensuite deux variables Boolean (Vrai ou faux) pour les états précédents et actuels de la broche, l'état précédent étant ce que l'état actuel était au temps précédent autour de la boucle. Dans la boucle, nous comparons l'état antérieur à l'état actuel pour détecter quand ils sont différents. Nous ne voulons pas garder l'affichage d'un message s'il n'y a pas eu de changement.
 
-1. Open Idle3 from the main menu.
+
+1. Ouvrez Idle3 dans le menu principal.
 
 ![Open Idle3](images/open_idle.png)
 
-1. Create a new program from the **File** -> **New Window** option
+2. Créer un nouveau programme à partir de l'option **File** -> **New Window**
 
-1. Enter the code below.
+3. Entrez le code ci-dessous.
 
     ```python
     import RPi.GPIO as GPIO
@@ -37,11 +38,11 @@ We then use two Boolean (True or False) variables for the previous and current s
             print("GPIO pin %s is %s" % (sensor, new_state))
     ```
 
-1. Press `Ctrl + S` and enter a sensible name for the file.
+4. Appuyez sur `Ctrl + S` et entrez un nom pour le fichier.
 
-1. Now run the Python file by pressing the **F5** key.
+5. Lancez maintenant le fichier Python en appuyant sur la touche **F5** .
 
-1. If you start moving or waving the sensor pin will go HIGH. Keep on waving and it will stay HIGH, and it will only go back to LOW if you keep still again. If you see the sensor behave like this, then everything is working correctly. If not, something is wrong and you need to go back and troubleshoot.
+6. Si vous commencez à vous déplacer ou vous agiter, la broche du capteur AUGMENTE (HIGH). Continuez à vous agiter et elle va rester élevée, et elle ne reviendra à LOW que si vous ne bougez plus à nouveau. Si le capteur se comporte comme cela, alors tout fonctionne correctement. Sinon, quelque chose ne va pas et vous avez besoin de revenir en arrière et résoudre les problèmes.
 
     ```
     GPIO pin 4 is HIGH
@@ -49,12 +50,12 @@ We then use two Boolean (True or False) variables for the previous and current s
     GPIO pin 4 is HIGH
     ```
 
-1. Press `Ctrl + C` when you want to exit.
+7. Appuyez sur `Ctrl + C` quand vous souhaitez quitter.
 
-1. On the PIR module, you should see two orange components with sockets that fit a Phillips screwdriver. 
-    
+8. Sur le module PIR, vous devriez voir deux composants oranges avec des douilles qui ressemblent à un tournevis cruciforme.
+
     ![](images/pir_potentiometers.png)
     
-    These are called potentiometers, and they allow you to adjust the sensitivity of the sensor and the detection time. We would suggest setting the sensitivity to maximum and the time to minimum, but the choice is yours.
+    Ceux-ci sont appelés potentiomètres et ils vous permettent de régler la sensibilité du capteur et le temps de détection. Nous suggérons de régler la sensibilité au maximum et le temps au minimum, mais c'est vous qui décidez.
 
-Back to [Getting started with physical computing](worksheet.md)
+Retour vers [Commencer avec l'informatique Physique](worksheet.md)
