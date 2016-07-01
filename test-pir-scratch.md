@@ -1,27 +1,27 @@
-# Test a PIR Montion Sensor in Scratch
+# Tester un détecteur de mouvement (PIR) connecté à Scratch
 
-1.  With your PIR circuit complete, you are now ready to use Scratch to sense for motion. Launch the program **Scratch** by clicking on **Menu** followed by **Programming** and selecting **Scratch**.
+1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour détecter les mouvements. Lancez le programme ** Scratch ** en cliquant sur Menu ** ** puis ** Programmation ** et en sélectionnant ** Scratch ** .
 
- Our version of Scratch on Raspbian is extra special. It allows you to access and control the GPIO pins.
+Notre version de Scratch sur Raspbian est très spéciale. Elle vous permet d'accéder et de contrôler les broches GPIO.
 
-1.  Click on **control** in the top left display. Drag the ![Green Flag](images/green_flag.png) block onto the scripts area.
+2.  Cliquez sur Control sur l'écran en haut à gauche. Faites glisser le bloc ![Green Flag](images/green_flag.png) sur votre zone de scripts.
 
-1. Drag a `broadcast` block to your scripts area and attach it to the ![Green Flag](images/green_flag.png) block. Click on the drop down menu on the broadcast block and select **new**.
+3. Faites glisser un bloc `broadcast` sur votre zone de scripts et attacher le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **new**.
 
-    In the message name box type `config4in` This instruction will tell the Raspberry Pi to set GPIO pin 4 as an input.
+    Dans le message nommé type de boîte `config4in` cette instruction indique à la Raspberry Pi de définir la broche GPIO 4 comme une entrée.
 
 ![Config Pin 4](images/scratch_config4.png)
 
-1. Press the green flag in the upper-right corner of the Scratch window. This executes the instruction to set GPIO pin 4 as an input.
+4. Cliquez sur le drapeau vert dans le coin supérieur droit de la fenêtre de Scratch. Cela exécute l'instruction pour définir la broche GPIO 4 comme entrée.
 
-1. Scratch uses the 'Sensing' blocks to check if there is any input on the GPIO pins. If there is an input, the value of the pin changes from `0` to `1`. As you connected the PIR sensor to GPIO pin 4 of the Pi, we need to monitor that. Click on the drop-down menu on the `sensor value` block and choose `gpio4`.
+5. Scratch utilise des blocs de « détection » pour vérifier s'il y a une entrée sur les broches GPIO. S'il y a une entrée, la valeur de la broche passe de `0` to `1`. Comme vous avez connecté le capteur PIR à la broche GPIO 4 de la Pi, nous devons surveiller cela. Cliquez sur le menu déroulant sur le bloc `valeur du capteur` et choisissez `gpio4`.
 
-1. Tick the check-box to the left of the block to display the pin value on screen.
+6. Cochez la case à gauche du bloc pour afficher la valeur de la broche à l'écran.
 
   ![Scratch sensing blocks](images/sensing-blocks.png)
 
-1. Test the PIR sensor by waving your hand in front of it. When it detects movement, the value on the screen should change from `0` to `1`.
+7. Testez le capteur PIR en agitant votre main en face de lui. Quand il détecte un mouvement, la valeur sur l'écran doit passer de `0` to `1`.
 
-1. If the value doesn't change, check that the correct pins are connected.
+8. Si la valeur ne change pas, vérifiez que les bonnes broches soient connectées.
 
-Back to [Getting started with physical computing](worksheet.md)
+Retour vers [Commencer avec l'informatique Physique](worksheet.md)
