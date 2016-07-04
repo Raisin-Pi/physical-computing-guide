@@ -41,7 +41,7 @@ Avec votre circuit complet, vous êtes maintenant prêt à écrire du code pour 
     print("Light off")
     GPIO.output(led,GPIO.LOW)
     ```
-    La première ligne ajoute une pause ou un délai. Il indique au programme de "dormir" pendant une seconde avant de passer à la ligne suivante dans la séquence de code. Pendant ce temps, votre LED sera allumée parce que vous ne lui avez pas dit de faire quelque chose d'autre encore. Pour éteindre la LED, vous ajoutez une ligne semblable à celle qui a allumé la broche GPIO 17 ; vous remplacez alors GPIO.HIGH avec GPIO.LOW. Cela éteindra la broche parce qu'elle ne fournit plus aucune tension.
+    La première ligne ajoute une pause ou un délai. Il indique au programme de "dormir" pendant une seconde avant de passer à la ligne suivante dans la séquence de code. Pendant ce temps, votre LED sera allumée parce que vous ne lui avez pas encore dit de faire quelque chose d'autre. Pour éteindre la LED, vous ajoutez une ligne semblable à celle qui a allumé la broche GPIO 17 ; vous remplacez alors GPIO.HIGH avec GPIO.LOW. Cela éteindra la broche car elle ne fournit plus aucune tension.
 
 6. La dernière partie à ajouter à votre programme est :
 
