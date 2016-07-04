@@ -17,6 +17,6 @@ Sauf indication contraire, tout ce qui est contenu dans ce référentiel est cou
 
 [![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-***Getting Started with Physical Computing*** by the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+***Getting Started with Physical Computing*** de la [Fondation Raspberry Pi](http://www.raspberrypi.org) est sous la licence [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Basé sur un travail situé à l'adresse suivante : https://github.com/raspberrypilearning/physical-computing-guide
