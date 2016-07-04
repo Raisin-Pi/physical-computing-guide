@@ -1,6 +1,6 @@
 # Tester un détecteur de mouvement (PIR) connecté à Python
 
-Nous allons utiliser le langage de programmation Python pour écrire du code qui permet de détecter des mouvements et imprimer un texte. Lorsque le mouvement est détecté, le détecteur de mouvement PIR mets de la puissance à sa broche OUT, que nous avons connectée à à la broche GPIO 4 sur la Pi. Donc, dans notre code, nous avons juste besoin de vérifier en permanence la broche 4 pour voir si elle a de la puissance ou non.
+Nous allons utiliser le langage de programmation Python pour écrire du code qui permet de détecter des mouvements et imprimer un texte. Lorsque le mouvement est détecté, le détecteur de mouvement PIR met de la puissance à sa broche OUT, que nous avons connectée à à la broche GPIO 4 sur la Pi. Donc, dans notre code, nous avons juste besoin de vérifier en permanence la broche 4 pour voir si elle a de la puissance ou non.
 
 Si une broche a de la puissance, nous appelons ça `HIGH` et sinon nous appelons cela `LOW`.
 
@@ -42,7 +42,7 @@ Nous utilisons ensuite deux variables Boolean (Vrai ou faux) pour les états pr�
 
 5. Lancez maintenant le fichier Python en appuyant sur la touche **F5** .
 
-6. Si vous commencez à vous déplacer ou vous agiter, la broche du capteur AUGMENTE (HIGH). Continuez à vous agiter et elle va rester élevée, et elle ne reviendra à LOW que si vous ne bougez plus à nouveau. Si le capteur se comporte comme cela, alors tout fonctionne correctement. Sinon, quelque chose ne va pas et vous avez besoin de revenir en arrière et résoudre les problèmes.
+6. Si vous commencez à vous déplacer ou à vous agiter, la broche du capteur AUGMENTE (HIGH). Continuez à vous agiter et elle va rester élevée, et elle ne reviendra à LOW que si vous ne bougez plus à nouveau. Si le capteur se comporte comme cela, alors tout fonctionne correctement. Sinon, quelque chose ne va pas et vous avez besoin de revenir en arrière et résoudre les problèmes.
 
     ```
     GPIO pin 4 is HIGH
