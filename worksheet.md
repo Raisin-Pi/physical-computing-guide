@@ -151,9 +151,9 @@ Le capteur est considéré comme passif, car il n'envoie pas de signal pour dét
 Il ne faut pas se soucier de son fonctionnement interne. Ce qui nous intéressent sont les trois axes sur elle ; nous pouvons les connecter aux broches GPIO de la Raspberry Pi. Une broche est pour +5 volts, une broche est pour la mase et l'autre est la broche du capteur (la broche centrale sur notre Pi). Cette broche de capteur est alimentée chaque fois que le mouvement est détecté par le module PIR. On peut alors voir que cela se produit sur la Raspberry Pi et créer des actions en conséquence.
 
 
-- [Connecter un senseur PIR](connect-pir.md)
-- [Tester un senseur PIR avec Python](test-pir-python.md)
-- [Tester un senseur PIR avec Scratch](test-pir-scratch.md)
+- [Connecter un détecteur de mouvement PIR](connect-pir.md)
+- [Tester un détecteur de mouvement PIR avec Python](test-pir-python.md)
+- [Tester un détecteur de mouvement PIR avec Scratch](test-pir-scratch.md)
 
 ## Quoi d'autre ?
 
