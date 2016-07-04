@@ -100,15 +100,15 @@ Les résistances sont un moyen de limiter la quantité d'électricité qui passe
 
 ![](images/resistor-330r.png)
 
-La valeur d'une résistance est marquée par des bandes de couleur le long de la longueur du corps de résistance. Une résistance, communément utilisée dans des projets avec des LEDs, a une valeur de résistance de 330 Ω. Vous pouvez identifier les résistances de 330 Ω par les bandes de couleur le long du corps. Le codage couleur dépendra de combien de bandes sont sur les résistances : s'il y a quatre bandes de couleur, elles seront orange, orange, marron et or. S'il y a cinq bandes, les couleurs seront orange, orange, noir, noir, marron.
+La valeur d'une résistance est marquée par des bandes de couleur le long du corps de résistance. Une résistance, communément utilisée dans des projets avec des LEDs, a une valeur de résistance de 330 Ω. Vous pouvez identifier les résistances de 330 Ω par les bandes de couleur le long du corps. Le codage couleur dépendra de combien de bandes sont sur les résistances : s'il y a quatre bandes de couleur, elles seront orange, orange, marron et or. S'il y a cinq bandes, les couleurs seront orange, orange, noir, noir, marron.
 
-Vous devez utiliser des résistances pour connecter les LED sur les broches GPIO de la Raspberry Pi. La Raspberry Pi ne peut fournir qu'un courant faible (environ 60mA). Les LEDs veulent tirer plus, et si on les laisse faire, elles brûleront la Raspberry Pi. Par conséquent, mettre les résistances dans un circuit fera en sorte que seulement un petit courant circule et que la Pi ne sera pas endommagée. Le sens de connexion des résistaces importeent peu. Le courant circule dans les deux sens à travers elles.
+Vous devez utiliser des résistances pour connecter les LED sur les broches GPIO de la Raspberry Pi. La Raspberry Pi ne peut fournir qu'un courant faible (environ 60mA). Les LEDs veulent tirer plus, et si on les laisse faire, elles brûleront la Raspberry Pi. Par conséquent, mettre les résistances dans un circuit fera en sorte que seulement un petit courant circule et que la Pi ne sera pas endommagée. Le sens de connexion des résistaces importent peu. Le courant circule dans les deux sens à travers elles.
 
 ## Qu'est ce qu'une LED?
 
 ![](images/led.png)
 
-LED signifie diode électroluminescente (Light Emitting Diode). Une LED brille quand du courant électrique passe à travers elle. Lorsque vous décrochez le LED, vous remarquerez qu'une branche est plus longue que l'autre. La plus grande branche (connue sous le nom de l'anode) est toujours connectée à la borne + positive du circuit. La branche la plus courte (appelée la cathode) est connectée au côté négatif de l'alimentation électrique : la masse ou la terre. LesLED ne fonctionnent que si l'alimentation est fournie dans le bon sens (à savoir si la polarité est correcte). Vous ne casserez pas les LEDs si vous les connectez dans le mauvais sens, mais elles ne brilleront pas.
+LED signifie diode électroluminescente (Light Emitting Diode). Une LED brille quand du courant électrique passe à travers elle. Lorsque vous décrochez le LED, vous remarquerez qu'une branche est plus longue que l'autre. La plus grande branche (connue sous le nom de l'anode) est toujours connectée à la borne + positive du circuit. La branche la plus courte (appelée la cathode) est connectée au côté négatif de l'alimentation électrique : la masse ou la terre. Les LED ne fonctionnent que si l'alimentation est fournie dans le bon sens (à savoir si la polarité est correcte). Vous ne casserez pas les LEDs si vous les connectez dans le mauvais sens, mais elles ne brilleront pas.
 
 ### Pourquoi la LED brille ?
 
@@ -141,9 +141,9 @@ Nous utilisons des câbles de liaison pour relier les broches GPIO sur la Raspbe
 
 ## Qu'est-ce qu'un détecteur de mouvement PIR ?
 
-**PIR** signifie **infrarouge passif**. C'est un type de capteur que vous aimeriez le plus souvent trouver dans les coins des pièces pour les systèmes d'alarme antivol. Tous les objets dont les températures sont au-dessus du zéro absolu émettent un rayonnement infrarouge. Les longueurs d'onde infrarouges ne sont pas visibles pour l'oeil humain, mais elles peuvent être détectées par le système électronique à l'intérieur de l'un de ces modules.
+**PIR** signifie **infrarouge passif**. C'est un type de capteur que'on trouve souvent dans les coins des pièces pour les systèmes d'alarme antivol. Tous les objets dont les températures sont au-dessus du zéro absolu émettent un rayonnement infrarouge. Les longueurs d'onde infrarouges ne sont pas visibles pour l'oeil humain, mais elles peuvent être détectées par le système électronique à l'intérieur de l'un de ces modules.
 
-Le capteur est considéré comme passif, car il n'envoie pas de signal pour détecter le mouvement. Il se règle à la signature infrarouge de la pièce dans laquelle il est et ensuite montre pour tout changement. Tout objet se déplaçant à travers la pièce va perturber la signature infrarouge, et provoquer un changement qui sera remarquée par le module PIR .
+Le capteur est considéré comme passif, car il n'envoie pas de signal pour détecter le mouvement. Il se règle à la signature infrarouge de la pièce dans laquelle il est et ensuite il montre tout changement. Tout objet se déplaçant à travers la pièce va perturber la signature infrarouge et provoquer un changement qui sera remarquée par le module PIR .
 
 
 ![](images/pir_module.png)
@@ -159,6 +159,6 @@ Il ne faut pas se soucier de son fonctionnement interne. Ce qui nous intéressen
 
 ### Le début de quelque chose d'étonnant
 
-Nous espérons que cela vous a encouragé à vous lancer dans l'informatique physique à l'aide de la GPIO Pi; ce n'est vraiment pas aussi difficile que ça n'y paraît. Tout commence avec une LED simple, mais cela peut vous emmener dans des endroits incroyables. Ne sous-estimez pas le plaisir pris, la créativité et le sens de la réalisationque vous pouvez obtenir à partir d'un petit ordinateur et un tas d'épingles. Amusez-vous ! Et si vous faites quelque chose de cool, s'il vous plaît, partagez le.
+Nous espérons que cela vous a encouragé à vous lancer dans l'informatique physique à l'aide de la GPIO Pi; ce n'est vraiment pas aussi difficile que ça n'y paraît. Tout commence avec une LED simple, mais cela peut vous emmener dans des endroits incroyables. Ne sous-estimez pas le plaisir pris, la créativité et le sens de la réalisation que vous pouvez obtenir à partir d'un petit ordinateur et un tas d'épingles. Amusez-vous ! Et si vous faites quelque chose de cool, s'il vous plaît, partagez-le.
 
-- Pourquoi ne pas utiliser vos nouvelles connaissances sur l'informatique physique pour compléter un de nos [make resources](https://www.raspberrypi.org/resources/make/)?
+- Pourquoi ne pas utiliser vos nouvelles connaissances sur l'informatique physique pour compléter une nouvelles [ressources](https://www.raspberrypi.org/resources/make/)?
