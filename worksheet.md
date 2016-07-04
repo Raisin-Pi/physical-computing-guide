@@ -75,7 +75,7 @@ Pour plus de détails sur les fonctionnalités des broches GPIO, allez voir : [i
 
 ### Pull up et Pull down les résistances
 
-Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre, la broche est dite ** flottante **, ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW` . Nous devons savoir catégoriquement que les fils ont touché. Nous avons donc besoin de fixer la tension à `HIGH` ou `LOW`, puis la faire varier seulement lorsque l'on fait toucher les fils ensemble. Vous pouvez en apprendre plus sur "pull up and pull down" des résistances dans [this guide](pull_up_down.md).
+Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre, la broche est dite **flottante**, ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW` . Nous devons savoir catégoriquement ce que les fils ont touché. Nous avons donc besoin de fixer la tension à `HIGH` ou `LOW`, puis la faire varier seulement lorsque l'on fait toucher les fils ensemble. Vous pouvez en apprendre plus sur "pull up and pull down" des résistances dans [ce guide](pull_up_down.md).
 
 # Composants
 
