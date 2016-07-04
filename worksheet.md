@@ -29,7 +29,7 @@ Vous pouvez programmer les broches pour interagir de manière incroyable avec le
 
 **Attention**: Si vous suivez les instructions, alors bricoler avec les GPIO sera sûr et amusant. Brancher aléatoirement des câbles et des sources d'alimentation sur votre Pi peut l'endommager ou la casser. Des effets néfastes peuvent également se produire si vous essayez de connecter les choses qui utilisent beaucoup de puissance à votre Pi ; Les LED sont très bien, les moteurs ne le sont pas. Si vous êtes inquiet à ce sujet, alors vous devriez envisager d'utiliser une carte supplémentaire comme la [Explorer HAT](https://shop.pimoroni.com/products/explorer-hat) jusqu'à ce que vous soyez assez confiant pour utiliser les GPIO directement.
 
-Ignoraez la Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
+Ignorez la Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
 
 ![Simple circuit](images/simple-circuit.png)
 
