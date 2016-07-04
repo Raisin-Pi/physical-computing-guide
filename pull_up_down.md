@@ -7,16 +7,14 @@ Cela peut être fait de deux façons :
 
 - A pull up circuit
 
-   Câblez la broche GPIO à 3,3 volts via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `HIGH`. Ensuite, nous pouvons court circuiter la broche à la masse en fermant circuit de telle sorte que la broche lira `LOW`. 
+   Câblez la broche GPIO à 3,3 volts via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `HIGH`. Ensuite, nous pouvons court-circuiter la broche à la masse en fermant le circuit de telle sorte que la broche lira `LOW`. 
 
 
   ![](images/pull_up.png)
 
 - A pull down circuit
 
-  Wire the GPIO pin to ground through a large (10kΩ) resistor so that it always reads `LOW`. Then you can short the pin to 3.3 volts by closing the circuit so that it goes `HIGH`. When the circuit is closed, there is a lower resistance path to 3.3 volts, and therefore the pin will read `HIGH`.
-  
-  Câblez la broche GPIO à la masse via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `LOW` . Ensuite, vous pouvez court circuiter la broche à 3,3 volts en fermant le circuit de sorte qu'elle lira `HIGH`. Lorsque le circuit est fermé, il y a un chemin de moindre résistance jusqu'à 3,3 volts, et donc la broche va lire `HIGH` .
+   Câblez la broche GPIO à la masse via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `LOW` . Ensuite, vous pouvez court-circuiter la broche à 3,3 volts en fermant le circuit de sorte qu'elle lira `HIGH`. Lorsque le circuit est fermé, il y a un chemin de moindre résistance jusqu'à 3,3 volts, et donc la broche va lire `HIGH` .
 
   ![](images/pull_down.png)
 
@@ -30,14 +28,14 @@ Heureusement, la Raspberry Pi a tous les circuits ci-dessus intégrés. Il peut 
 
 ### Circuit Pull up
 
-Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour que la GPIO 4 lise `HIGH` par défaut, alors vous allez la court circuiter à la masse à l'aide des câbles de façon à ce qu'elle lise `LOW` quand on appuie sur le bouton ou lorsque les fils se touchent, en complétant le circuit .
+Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour que la GPIO 4 lise `HIGH` par défaut, alors vous allez la court-circuiter à la masse à l'aide des câbles de façon à ce qu'elle lise `LOW` quand on appuie sur le bouton ou lorsque les fils se touchent, en complétant le circuit .
 
 1. Utilisez de câbles de connexion , connectez un bouton poussoir aux broches GPIO de la Raspberry Pi comme illustré ci-dessous. Prenez soin d'utiliser les bonnes broches. Si vous ne disposez pas de bouton-poussoir, vous pouvez utiliser deux câbles mâle / femelle afin de faire manuellement le contact entre la masse et la broche d'entrée.
 
 
   ![](images/pull_up_wire.png)
 
-2. Ouvrez Idle3 dansl e menu général.
+2. Ouvrez Idle3 dans le menu général.
 
 ![Open Idle3](images/open_idle.png)
 
@@ -76,7 +74,7 @@ Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour 
 
 ### Pull down circuit
 
-1. Retirez les câbles de démarrage des broches GPIO de la Raspberry Pi et rattachez -les comme indiqué dans le schéma ci-dessous. Prenez soin d'utiliser les bonnes broches.
+1. Retirez les câbles de démarrage des broches GPIO de la Raspberry Pi et rattachez-les comme indiqué dans le schéma ci-dessous. Prenez soin d'utiliser les bonnes broches.
 
   ![](images/pull_down_wire.png)
 
