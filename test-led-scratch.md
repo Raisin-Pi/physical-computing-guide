@@ -10,27 +10,27 @@
 
 2.  Cliquez sur **Control** sur l'écran en haut à gauche . Faites glisser le bloc ![Green Flag](images/green_flag.png) sur la zone de scripts.
 
-3. Faites glisser un bloc `broadcast` sur votre zone de scripts et attacher le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
+3. Faites glisser un bloc `envoyer à tous` ou `broadcast`en anglais sur votre zone de scripts et attacher le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
     
 Dans le message nommé type de boîte `gpioserveron`, cette instruction indique à Scratch d'activer ses fonctions GPIO.
 
-4. Faites glisser un autre bloc `broadcast` sur votre zone de scripts et attachez le en bas. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
+4. Faites glisser un autre bloc `envoyer à tous` sur votre zone de scripts et attachez-le en bas. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
     Dans le message nommé type de boîte `config17output`, cette instruction indique à la Raspberry Pi de définir la broche GPIO 17 en tant que sortie.
 
     ![](images/scratch_config.png)
 
-5. Faites glisser un autre bloc `broadcast` sur votre zone de scripts et attachez le en bas du premier bloc de diffusion. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
+5. Faites glisser un autre bloc `envoyer à tous` sur votre zone de scripts et attachez-le en bas du premier bloc de diffusion. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
     Dans le message nommé type de boîte `gpio17on`, cette instruction indique à la Raspberry Pi de régler la broche GPIO 17 à `HIGH`.
 
-6. Faites glisser un bloc `wait 1 secs` sur votre zone de scripts et reliez le au bloc de diffusion précédent.
+6. Faites glisser un bloc `attendre 1 secondes` sur votre zone de scripts et reliez-le au bloc de diffusion précédent.
 
-7. Faites glisser un dernier bloc `broadcast` sur votre zone de scripts et reliez le au bloc `wait 1 secs`. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
+7. Faites glisser un dernier bloc `envoyer à tous` sur votre zone de scripts et reliez-le au bloc `attendre 1 secondes`. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
     Dans le message nommé type de boîte `gpio17off`, cela éteindra la LED.
 
-8. Enregistrez votre travail jusqu'à présent en cliquant sur **File** puis **Save As**. Nommez votre fichier `Test LED` et cliquez sur **OK**.
+8. Enregistrez votre travail jusqu'à présent en cliquant sur **Fichier** puis **Enregistrer sous**. Nommez votre fichier `Test LED` et cliquez sur **OK**.
 
 9. Testez votre programme en cliquant sur l'icône ![Green Flag](images/green_flag_icon.png). Vous devriez voir la LED s'allumer pendant 1 seconde, puis éteindre.
 
