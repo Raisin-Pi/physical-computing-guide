@@ -4,7 +4,7 @@
 
 Une caractéristique puissante de la Raspberry Pi est la rangée de broches GPIO le long du bord supérieur de la carte. Les GPIO représentent les entrées et sorties universelles. Ces broches sont une interface physique entre Pi et le monde extérieur. De manière simplifiée, vous pouvez les comparer à des interrupteurs que vous pouvez allumer ou éteindre (entrée) ou que le Pi peut allumer ou éteindre (sortie).
 
-Les broches GPIO sont un moyen avec lequel le Raspberry Pi peut contrôler et surveiller le monde extérieur en étant connecté à des circuits électroniques. Le Pi est capable de contrôler des LED, les allumer ou les éteindre, ou des moteurs , ou bien d'autres éléments. Il est aussi capable de détecter si un interrupteur a été activé, ou détecter la température, la lumière. Nous appelons cela l'informatique physique.
+Les broches GPIO sont un moyen avec lequel le Raspberry Pi peut contrôler et surveiller le monde extérieur en étant connecté à des circuits électroniques. Le Pi est capable de contrôler des LED, les allumer ou les éteindre, ou des moteurs ou bien d'autres éléments. Il est aussi capable de détecter si un interrupteur a été activé ou détecter la température et la lumière. Nous appelons cela l'informatique physique.
 
 
 ## Feuille de travail
