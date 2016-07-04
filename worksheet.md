@@ -43,7 +43,7 @@ L'étape suivante consiste à écrire un programme pour dire à la broche de fon
 
 ### Entrées
 
-Les ** sorties ** GPIO sont faciles ; elles sont allumées ou éteintes, HIGH or LOW, 3.3 V ou 0 V. Les ** Entrées ** sont un peu plus complexes à cause de la façon dont fonctionnent les appareils numériques. Bien qu'il puisse sembler simple de juste connecter un bouton à travers une broche d'entrée et une broche de masse, la Pi peut confondre quant à savoir si le bouton est activé ou désactivé. Il pourrait fonctionner correctement, ou pas. C'est est un peu comme flotter dans un espace profond ; sans référence, il serait difficile de dire si vous allumez ou si vous éteignez, ou même de savoir ce que signifie allumer ou éteindre !
+Les **sorties** GPIO sont faciles ; elles sont allumées ou éteintes, HIGH or LOW, 3.3 V ou 0 V. Les **Entrées** sont un peu plus complexes à cause de la façon dont les appareils numériques fonctionnent. Bien qu'il puisse sembler simple de juste connecter un bouton à travers une broche d'entrée et une broche de masse, la Pi peut confondre quant à savoir si le bouton est activé ou désactivé. Il pourrait fonctionner correctement, ou pas. C'est un peu comme flotter dans un espace profond ; sans référence, il serait difficile de dire si vous allumez ou si vous éteignez, ou même de savoir ce que signifie allumer ou éteindre !
 
 C'est la raison pour laquelle vous verrez des phrases comme "remonter" (pull up) and "descendre" (pull down) dans les tutoriels concernant les GPIO Raspberry Pi. C'est une façon de donner à la broche d'entrée une référence de sorte qu'il sache avec certitude quand une entrée est reçue.
 
