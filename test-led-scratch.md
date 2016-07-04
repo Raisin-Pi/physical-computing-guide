@@ -4,7 +4,7 @@
 
  ![](images/scratch-icon.png)
 
- Notre version de Scratch sur Raspbian est très spéciale. Elle vous permet d'accéder et de contrôler les broches GPIO.
+ Notre version de Scratch sur Raspbian ou Ubuntu Mate est très spéciale. Elle vous permet d'accéder et de contrôler les broches GPIO.
 
     ![](images/Scratch-interface.png "The Scratch Interface")
 
