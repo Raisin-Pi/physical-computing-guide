@@ -1,6 +1,6 @@
 # Tester une LED connectée à Scratch
 
-1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour allumer la LED. Lancez le programme ** Scratch ** en cliquant sur Menu ** ** puis ** Programmation ** et en sélectionnant ** Scratch ** .
+1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour allumer la LED. Lancez le programme **Scratch** en cliquant sur **Menu** puis **Programmation** et en sélectionnant **Scratch** .
 
  ![](images/scratch-icon.png)
 
