@@ -68,7 +68,7 @@ L'autre façon de se référer aux broches est en comptant simplement "across an
 
 Les débutants et les jeunes enfants peuvent trouver le système de numérotation physique plus simple : vous comptez simplement les broches. Vous aurez toujours besoin d'un schéma comme celui ci-dessus pour savoir quelles sont les broches GPIO, quelles sont celles qui sont à la masse , qui ont de la puissance.
 
-En général, nous vous recommandons d'utiliser la numérotation GPIO. C'est une bonne pratique et la plupart des ressources utilisent ce système. Faites votre choix  : tat que vous utilisez le même système dans un programme, alors tout ira bien. Notez que la numérotation des broches peut aussi dépendre de ce langage de programmation que vous utilisez.
+En général, nous vous recommandons d'utiliser la numérotation GPIO. C'est une bonne pratique et la plupart des ressources utilisent ce système. Faites votre choix  : tant que vous utilisez le même système dans un programme, tout ira bien. Notez que la numérotation des broches peut aussi dépendre du langage de programmation que vous utilisez.
 
 
 Pour plus de détails sur les fonctionnalités des broches GPIO, allez voir : [interactive pinout diagram](http://pi.gadgetoid.com/pinout).
