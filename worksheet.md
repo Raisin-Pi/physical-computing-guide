@@ -115,10 +115,10 @@ LED signifie diode électroluminescente (Light Emitting Diode). Une LED brille q
 Quand un circuit est branché sur les broches GPIO de la Raspberry Pi, l'électricité circule à travers le circuit. Le flux est appelé le courant. La LED est allumée uniquement lorsque le courant électrique circule de la longue branche à travers l'ampoule jusqu'à la branche courte. La résistance diminue la quantité de courant électrique passant à travers le circuit. Ceci protège la LED de la casse.
 
 
-- [Connecting LEDs without a breadboard](connect-led.md)
-- [Connecting an LED with a breadboard](connect-leds.md)
-- [Testing a connected LED in Python](test-led-python.md)
-- [Testing a connected LED in Scratch](test-led-scratch.md)
+- [Connecter une LED sans breadboard](connect-led.md)
+- [Connecter une LED avec breadboard](connect-leds.md)
+- [Tester une LED connectée sur Python](test-led-python.md)
+- [Tester une LED connectée sur Scratch](test-led-scratch.md)
 
 ## Qu'est ce qu'un bouton poussoir ?
 Un bouton poussoir fermera un circuit lorsque le bouton est enfoncé. Cela signifie que le courant circule à travers le circuit seulement lorsqu'on appuie sur le bouton. Quand il est libéré, le circuit sera « ouvert ».
@@ -151,9 +151,9 @@ Le capteur est considéré comme passif, car il n'envoie pas de signal pour dét
 Il ne faut pas se soucier de son fonctionnement interne. Ce qui nous intéressent sont les trois axes sur elle ; nous pouvons les connecter aux broches GPIO de la Raspberry Pi. Une broche est pour +5 volts, une broche est pour la mase et l'autre est la broche du capteur (la broche centrale sur notre Pi). Cette broche de capteur est alimentée chaque fois que le mouvement est détecté par le module PIR. On peut alors voir que cela se produit sur la Raspberry Pi et créer des actions en conséquence.
 
 
-- [Connecting a PIR sensor](connect-pir.md)
-- [Test a PIR sensor with Python](test-pir-python.md)
-- [Test a PIR sensor with Scratch](test-pir-scratch.md)
+- [Connecter un senseur PIR](connect-pir.md)
+- [Tester un senseur PIR avec Python](test-pir-python.md)
+- [Tester un senseur PIR avec Scratch](test-pir-scratch.md)
 
 ## Quoi d'autre ?
 
