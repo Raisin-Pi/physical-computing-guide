@@ -33,7 +33,7 @@ Ignorez la Pi un moment, l'un des plus simples circuits électriques que vous po
 
 ![Simple circuit](images/simple-circuit.png)
 
-Lorsque nous utilisons une broche GPIO comme sortie, la Raspberry Pi remplace ** à la fois l'interrupteur et la batterie ** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts ( 3V3 ) ; lorsque la broche est ` LOW`, il est éteint.
+Lorsque nous utilisons une broche GPIO comme sortie, la Raspberry Pi remplace **à la fois l'interrupteur et la batterie** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts ( 3V3 ) ; lorsque la broche est ` LOW`, il est éteint.
 
 Voici le même circuit en utilisant le Raspberry Pi. La LED est reliée à une broche GPIO (qui peut produire 3.3 V) et une broche de terre (qui correspond à 0 V et agit comme la borne négative de la batterie) :
 
