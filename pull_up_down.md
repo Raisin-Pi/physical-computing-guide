@@ -23,14 +23,14 @@ Note : La résistance 1k kOhm R2 est là dans les deux circuits pour donner à l
 ### Analogie
 Imaginez une porte donnant sur un champ qui a des charnières extrêmement lisses, le moindre choc, une douce brise ou l'atterrissage d'un insecte pourrait la déplacer. Vous ne savez jamais si la porte était ouverte ou fermée car elle pourrait constamment balancer doucement entre ces deux positions. Si vous deviez ajouter un ressort à la porte pour la maintenir fermée, la porte serait maintenue en place, sauf dans le cas d'une poussée délibérée qui pourrait l'ouvrir. Dans cette situation, la position de la porte représente la tension qui peut fluctuer, le ressort représente la résistance qui fixe la tension soit `HIGH` ou `LOW`.
 
-Heureusement, la Raspberry Pi a tous les circuits ci-dessus intégrés. Il peut être utile d'imaginer que les deux résistances `R1` et`R2` des diagrammes ci-dessus sont à l'intérieur des circuits de la Raspberry Pi et ils peuvent être activés ou désactivés autant que nécessaire. Vous pouvez sélectionner un "pull up" ou un "pull down" dans votre code pour chaque broche GPIO.
+Heureusement, le Raspberry Pi a tous les circuits ci-dessus intégrés. Il peut être utile d'imaginer que les deux résistances `R1` et`R2` des diagrammes ci-dessus sont à l'intérieur des circuits du Raspberry Pi et ils peuvent être activés ou désactivés autant que nécessaire. Vous pouvez sélectionner un "pull up" ou un "pull down" dans votre code pour chaque broche GPIO.
 
 
 ### Circuit Pull up
 
 Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour que la GPIO 4 lise `HIGH` par défaut, alors vous allez la court-circuiter à la masse à l'aide des câbles de façon à ce qu'elle lise `LOW` quand on appuie sur le bouton ou lorsque les fils se touchent, en complétant le circuit .
 
-1. Utilisez de câbles de connexion , connectez un bouton poussoir aux broches GPIO de la Raspberry Pi comme illustré ci-dessous. Prenez soin d'utiliser les bonnes broches. Si vous ne disposez pas de bouton-poussoir, vous pouvez utiliser deux câbles mâle / femelle afin de faire manuellement le contact entre la masse et la broche d'entrée.
+1. Utilisez de câbles de connexion , connectez un bouton poussoir aux broches GPIO du Raspberry Pi comme illustré ci-dessous. Prenez soin d'utiliser les bonnes broches. Si vous ne disposez pas de bouton-poussoir, vous pouvez utiliser deux câbles mâle / femelle afin de faire manuellement le contact entre la masse et la broche d'entrée.
 
 
   ![](images/pull_up_wire.png)
@@ -74,7 +74,7 @@ Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour 
 
 ### Pull down circuit
 
-1. Retirez les câbles de démarrage des broches GPIO de la Raspberry Pi et rattachez-les comme indiqué dans le schéma ci-dessous. Prenez soin d'utiliser les bonnes broches.
+1. Retirez les câbles de démarrage des broches GPIO du Raspberry Pi et rattachez-les comme indiqué dans le schéma ci-dessous. Prenez soin d'utiliser les bonnes broches.
 
   ![](images/pull_down_wire.png)
 
