@@ -16,13 +16,13 @@ Dans le message nommé type de boîte `gpioserveron`, cette instruction indique 
 
 4. Faites glisser un autre bloc `envoyer à tous` sur votre zone de scripts et attachez-le en bas. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
-    Dans le message nommé type de boîte `config17output`, cette instruction indique à la Raspberry Pi de définir la broche GPIO 17 en tant que sortie.
+    Dans le message nommé type de boîte `config17output`, cette instruction indique au Raspberry Pi de définir la broche GPIO 17 en tant que sortie.
 
     ![](images/scratch_config.png)
 
 5. Faites glisser un autre bloc `envoyer à tous` sur votre zone de scripts et attachez-le en bas du premier bloc de diffusion. Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
-    Dans le message nommé type de boîte `gpio17on`, cette instruction indique à la Raspberry Pi de régler la broche GPIO 17 à `HIGH`.
+    Dans le message nommé type de boîte `gpio17on`, cette instruction indique au Raspberry Pi de régler la broche GPIO 17 à `HIGH`.
 
 6. Faites glisser un bloc `attendre 1 secondes` sur votre zone de scripts et reliez-le au bloc de diffusion précédent.
 
