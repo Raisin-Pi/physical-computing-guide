@@ -1,6 +1,6 @@
 # Commencer avec l'Informatique Physique avec la Raspberry Pi
 
-Une caractéristique puissante de la Raspberry Pi est la rangée de broches GPIO le long du bord supérieur de la carte. Les GPIO représentent les entrées et sorties universelles. Ces broches sont une interface physique entre Pi et le monde extérieur. De manière simplifiée, vous pouvez les comparer à des interrupteurs que vous pouvez allumer ou éteindre (entrée) ou que le Pi peut allumer ou éteindre (sortie).
+Une caractéristique puissante du Raspberry Pi est la rangée de broches GPIO le long du bord supérieur de la carte. Les GPIO représentent les entrées et sorties universelles. Ces broches sont une interface physique entre Pi et le monde extérieur. De manière simplifiée, vous pouvez les comparer à des interrupteurs que vous pouvez allumer ou éteindre (entrée) ou que le Pi peut allumer ou éteindre (sortie).
 
 Les broches GPIO sont un moyen avec lequel le Raspberry Pi peut contrôler et surveiller le monde extérieur en étant connecté à des circuits électroniques. Le Pi est capable de contrôler des LED, les allumer ou les éteindre, contrôler des moteurs ou bien d'autres éléments. Il est aussi capable de détecter si un interrupteur a été activé ou détecter la température, la lumière. Nous appelons cela l'informatique physique.
 
@@ -9,7 +9,7 @@ Les modèles A +, B +, et Pi 2 ont 40 broches qui ressemblent à ceci :
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
-Ces broches sont une interface physique entre la Pi et le monde extérieur. De manière très simple, vous pouvez penser à elles comme des interrupteurs que vous pouvez activer ou désactiver (entrée) ou que la Pi peut activer ou désactiver (sortie). Sur les 40 broches, 26 sont des broches GPIO et les autres correpondent aux sources d'alimentation ou à la masse (plus deux broches ID EEPROM, auxquelles vous ne devriez pas toucher, sauf si vous êtes expert en la matière).
+Ces broches sont une interface physique entre le Pi et le monde extérieur. De manière très simple, vous pouvez penser à elles comme des interrupteurs que vous pouvez activer ou désactiver (entrée) ou que le Pi peut activer ou désactiver (sortie). Sur les 40 broches, 26 sont des broches GPIO et les autres correpondent aux sources d'alimentation ou à la masse (plus deux broches ID EEPROM, auxquelles vous ne devriez pas toucher, sauf si vous êtes expert en la matière).
 
 ![GPIO layout](images/gpio-numbers-pi2.png)
 
@@ -21,7 +21,7 @@ A noter que la numérotation des broches GPIO est assez inhabituelle. Elle est e
 
 ## À quoi servent-elles ? Que puis-je faire avec ?
 
-Vous pouvez programmer les broches pour interagir de manière incroyable avec le monde réel. Les entrées ne doivent pas provenir d'un interrupteur physique; cela peut être un capteur ou un signal provenant d'un autre ordinateur ou de périphériques, par exemple. La sortie peut aussi faire de nombreuses choses : allumer une LED, envoyer un signal ou bien des données vers un autre appareil. Si le Raspberry Pi est sur un réseau, vous pouvez contrôler des périphériques qui y sont associés de presque partout et ces appareils peuvent envoyer des données en retour. La connectivité et le contrôle des périphériques physiques sur Internet est une chose puissante et excitante, et le Raspberry Pi est idéal pour cela. Il y a beaucoup d'exemples brillants à propos de l'informatique physique sur [our blog](http://www.raspberrypi.org/blog/).
+Vous pouvez programmer les broches pour interagir de manière incroyable avec le monde réel. Les entrées ne doivent pas provenir d'un interrupteur physique; cela peut être un capteur ou un signal provenant d'un autre ordinateur ou de périphériques, par exemple. Le sortie peut aussi faire de nombreuses choses : allumer une LED, envoyer un signal ou bien des données vers un autre appareil. Si le Raspberry Pi est sur un réseau, vous pouvez contrôler des périphériques qui y sont associés de presque partout et ces appareils peuvent envoyer des données en retour. La connectivité et le contrôle des périphériques physiques sur Internet est une chose puissante et excitante, et le Raspberry Pi est idéal pour cela. Il y a beaucoup d'exemples brillants à propos de l'informatique physique sur [our blog](http://www.raspberrypi.org/blog/).
 
 ## Comment les broches GPIO fonctionnent ?
 
@@ -29,11 +29,11 @@ Vous pouvez programmer les broches pour interagir de manière incroyable avec le
 
 **Attention**: Si vous suivez les instructions, alors bricoler avec les GPIO sera sûr et amusant. Brancher aléatoirement des câbles et des sources d'alimentation sur votre Pi peut l'endommager ou la casser. Des effets néfastes peuvent également se produire si vous essayez de connecter les choses qui utilisent beaucoup de puissance à votre Pi ; Les LED sont très bien, les moteurs ne le sont pas. Si vous êtes inquiet à ce sujet, alors vous devriez envisager d'utiliser une carte supplémentaire comme la [Explorer HAT](https://shop.pimoroni.com/products/explorer-hat) jusqu'à ce que vous soyez assez confiant pour utiliser les GPIO directement.
 
-Ignorez la Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
+Ignorez le Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
 
 ![Simple circuit](images/simple-circuit.png)
 
-Lorsque nous utilisons une broche GPIO comme sortie, la Raspberry Pi remplace **à la fois l'interrupteur et la batterie** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts ( 3V3 ) ; lorsque la broche est ` LOW`, il est éteint.
+Lorsque nous utilisons une broche GPIO comme sortie, le Raspberry Pi remplace **à la fois l'interrupteur et la batterie** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts ( 3V3 ) ; lorsque la broche est ` LOW`, il est éteint.
 
 Voici le même circuit en utilisant le Raspberry Pi. La LED est reliée à une broche GPIO (qui peut produire 3.3 V) et une broche de terre (qui correspond à 0 V et agit comme la borne négative de la batterie) :
 
@@ -43,7 +43,7 @@ L'étape suivante consiste à écrire un programme pour dire à la broche de fon
 
 ### Entrées
 
-Les **sorties** GPIO sont faciles ; elles sont allumées ou éteintes, HIGH or LOW, 3.3 V ou 0 V. Les **Entrées** sont un peu plus complexes à cause de la façon dont les appareils numériques fonctionnent. Bien qu'il puisse sembler simple de juste connecter un bouton à travers une broche d'entrée et une broche de masse, la Pi peut confondre quant à savoir si le bouton est activé ou désactivé. Il pourrait fonctionner correctement, ou pas. C'est un peu comme flotter dans un espace profond ; sans référence, il serait difficile de dire si vous allumez ou si vous éteignez, ou même de savoir ce que signifie allumer ou éteindre !
+Les **sorties** GPIO sont faciles ; elles sont allumées ou éteintes, HIGH or LOW, 3.3 V ou 0 V. Les **Entrées** sont un peu plus complexes à cause de la façon dont les appareils numériques fonctionnent. Bien qu'il puisse sembler simple de juste connecter un bouton à travers une broche d'entrée et une broche de masse, le Pi peut confondre quant à savoir si le bouton est activé ou désactivé. Il pourrait fonctionner correctement, ou pas. C'est un peu comme flotter dans un espace profond ; sans référence, il serait difficile de dire si vous allumez ou si vous éteignez, ou même de savoir ce que signifie allumer ou éteindre !
 
 C'est la raison pour laquelle vous verrez des phrases comme "remonter" (pull up) and "descendre" (pull down) dans les tutoriels concernant les GPIO Raspberry Pi. C'est une façon de donner à la broche d'entrée une référence de sorte qu'il sache avec certitude quand une entrée est reçue.
 
@@ -102,7 +102,7 @@ Les résistances sont un moyen de limiter la quantité d'électricité qui passe
 
 La valeur d'une résistance est marquée par des bandes de couleur le long du corps de résistance. Une résistance, communément utilisée dans des projets avec des LEDs, a une valeur de résistance de 330 Ω. Vous pouvez identifier les résistances de 330 Ω par les bandes de couleur le long du corps. Le codage couleur dépendra de combien de bandes sont sur les résistances : s'il y a quatre bandes de couleur, elles seront orange, orange, marron et or. S'il y a cinq bandes, les couleurs seront orange, orange, noir, noir, marron.
 
-Vous devez utiliser des résistances pour connecter les LED sur les broches GPIO de la Raspberry Pi. La Raspberry Pi ne peut fournir qu'un courant faible (environ 60mA). Les LEDs veulent tirer plus, et si on les laisse faire, elles brûleront la Raspberry Pi. Par conséquent, mettre les résistances dans un circuit fera en sorte que seulement un petit courant circule et que la Pi ne sera pas endommagée. Le sens de connexion des résistaces importent peu. Le courant circule dans les deux sens à travers elles.
+Vous devez utiliser des résistances pour connecter les LED sur les broches GPIO du Raspberry Pi. Le Raspberry Pi ne peut fournir qu'un courant faible (environ 60mA). Les LEDs veulent tirer plus, et si on les laisse faire, elles brûleront le Raspberry Pi. Par conséquent, mettre les résistances dans un circuit fera en sorte que seulement un petit courant circule et que le Pi ne sera pas endommagée. Le sens de connexion des résistaces importent peu. Le courant circule dans les deux sens à travers elles.
 
 ## Qu'est ce qu'une LED?
 
@@ -112,7 +112,7 @@ LED signifie diode électroluminescente (Light Emitting Diode). Une LED brille q
 
 ### Pourquoi la LED brille ?
 
-Quand un circuit est branché sur les broches GPIO de la Raspberry Pi, l'électricité circule à travers le circuit. Le flux est appelé le courant. La LED est allumée uniquement lorsque le courant électrique circule de la longue branche à travers l'ampoule jusqu'à la branche courte. La résistance diminue la quantité de courant électrique passant à travers le circuit. Ceci protège la LED de la casse.
+Quand un circuit est branché sur les broches GPIO du Raspberry Pi, l'électricité circule à travers le circuit. Le flux est appelé le courant. La LED est allumée uniquement lorsque le courant électrique circule de la longue branche à travers l'ampoule jusqu'à la branche courte. La résistance diminue la quantité de courant électrique passant à travers le circuit. Ceci protège la LED de la casse.
 
 
 - [Connecter une LED sans breadboard](connect-led.md)
@@ -133,10 +133,10 @@ Les câbles de connexion sont utilisés sur breadboards pour passer d'une connex
 | | | |
 |:-------|---|:---|
 | **Mâle / Mâle** | ![](images/jumper-male-to-male.png) | Les deux extrémités ont une « broche » qui peut être utilisée sur une carte de prototypage. |
-| **Mâle / femelle** | ![](images/jumper-male-to-female.png) | L'extrémité avec la « broche » ira sur une carte de prototypage.  L'extrémité avec le morceau de plastique avec un trou ira sur les broches GPIO de la Raspberry Pi. |
+| **Mâle / femelle** | ![](images/jumper-male-to-female.png) | L'extrémité avec la « broche » ira sur une carte de prototypage.  L'extrémité avec le morceau de plastique avec un trou ira sur les broches GPIO du Raspberry Pi. |
 | **Femelle / femelle** | ![](images/jumper-female-to-female.png) | Les deux extrémités ont un morceau de plastique avec un trou dedans et peuvent être utilisés avec des broches GPIO et des composants Raspberry Pi.  |
 
-Nous utilisons des câbles de liaison pour relier les broches GPIO sur la Raspberry Pi et les cartes de prototypage. C'est vraiment un moyen simple et rapide pour commencer à faire des circuits simples.
+Nous utilisons des câbles de liaison pour relier les broches GPIO sur le Raspberry Pi et les cartes de prototypage. C'est vraiment un moyen simple et rapide pour commencer à faire des circuits simples.
 
 
 ## Qu'est-ce qu'un détecteur de mouvement PIR ?
@@ -148,7 +148,7 @@ Le capteur est considéré comme passif, car il n'envoie pas de signal pour dét
 
 ![](images/pir_module.png)
 
-Il ne faut pas se soucier de son fonctionnement interne. Ce qui nous intéressent sont les trois axes sur elle ; nous pouvons les connecter aux broches GPIO de la Raspberry Pi. Une broche est pour +5 volts, une broche est pour la mase et l'autre est la broche du capteur (la broche centrale sur notre Pi). Cette broche de capteur est alimentée chaque fois que le mouvement est détecté par le module PIR. On peut alors voir que cela se produit sur la Raspberry Pi et créer des actions en conséquence.
+Il ne faut pas se soucier de son fonctionnement interne. Ce qui nous intéressent sont les trois axes sur elle ; nous pouvons les connecter aux broches GPIO du Raspberry Pi. Une broche est pour +5 volts, une broche est pour la mase et l'autre est la broche du capteur (la broche centrale sur notre Pi). Cette broche de capteur est alimentée chaque fois que le mouvement est détecté par le module PIR. On peut alors voir que cela se produit sur le Raspberry Pi et créer des actions en conséquence.
 
 
 - [Connecter un détecteur de mouvement PIR](connect-pir.md)
