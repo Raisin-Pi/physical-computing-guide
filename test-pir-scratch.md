@@ -8,13 +8,13 @@ Notre version de Scratch sur Raspbian et Ubuntu Mate est très spéciale. Elle v
 
 3. Faites glisser un bloc `envoyer à tous`ou `broadcast` en anglais sur votre zone de scripts et attachez-le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
-    Dans le message nommé type de boîte `config4in` cette instruction indique à la Raspberry Pi de définir la broche GPIO 4 comme une entrée.
+    Dans le message nommé type de boîte `config4in` cette instruction indique au Raspberry Pi de définir la broche GPIO 4 comme une entrée.
 
 ![Config Pin 4](images/scratch_config4.png)
 
 4. Cliquez sur le drapeau vert dans le coin supérieur droit de la fenêtre de Scratch. Cela exécute l'instruction pour définir la broche GPIO 4 comme entrée.
 
-5. Scratch utilise des blocs de « détection » pour vérifier s'il y a une entrée sur les broches GPIO. S'il y a une entrée, la valeur de la broche passe de `0` to `1`. Comme vous avez connecté le capteur PIR à la broche GPIO 4 de la Pi, nous devons surveiller cela. Cliquez sur le menu déroulant sur le bloc `valeur du capteur` et choisissez `gpio4`.
+5. Scratch utilise des blocs de « détection » pour vérifier s'il y a une entrée sur les broches GPIO. S'il y a une entrée, la valeur de la broche passe de `0` to `1`. Comme vous avez connecté le capteur PIR à la broche GPIO 4 du Pi, nous devons surveiller cela. Cliquez sur le menu déroulant sur le bloc `valeur du capteur` et choisissez `gpio4`.
 
 6. Cochez la case à gauche du bloc pour afficher la valeur de la broche à l'écran.
 
