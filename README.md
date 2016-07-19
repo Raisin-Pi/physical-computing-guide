@@ -6,6 +6,12 @@ Une caractéristique puissante de la Raspberry Pi est la rangée de broches GPIO
 
 Les broches GPIO sont un moyen avec lequel le Raspberry Pi peut contrôler et surveiller le monde extérieur en étant connecté à des circuits électroniques. Le Pi est capable de contrôler des LED, les allumer ou les éteindre, ou des moteurs ou bien d'autres éléments. Il est aussi capable de détecter si un interrupteur a été activé ou détecter la température et la lumière. Nous appelons cela l'informatique physique.
 
+Pendant cette séance, vous allez apprendre:
+
+- Comment utiliser les broches GPIO
+- Comment créer un circuit avec une carte de prototypage (breadboard)
+- Comment contrôler les broches GPIO avec du code sur Python et Scratch
+- Comment utiliser des LEDs, un bouton poussoir et un PIR.
 
 ## Feuille de travail
 - [Feuille de travail](worksheet.md)
