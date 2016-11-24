@@ -1,12 +1,12 @@
 # Tester un détecteur de mouvement (PIR) connecté à Scratch
 
-1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour détecter les mouvements. Lancez le programme **Scratch** en cliquant sur **Menu** puis **Programmation** et en sélectionnant **Scratch** .
+1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour détecter les mouvements. Lancez le programme **Scratch** en cliquant sur **Menu** puis **Programmation** et en sélectionnant **Scratch**.
 
 Notre version de Scratch sur Raspbian et Ubuntu Mate est très spéciale. Elle vous permet d'accéder et de contrôler les broches GPIO.
 
 2.  Cliquez sur Control sur l'écran en haut à gauche. Faites glisser le bloc ![Green Flag](images/green_flag.png) sur votre zone de scripts.
 
-3. Faites glisser un bloc `envoyer à tous`ou `broadcast` en anglais sur votre zone de scripts et attachez-le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
+3. Faites glisser un bloc `envoyer à tous` ou `broadcast` en anglais sur votre zone de scripts et attachez-le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
 
     Dans le message nommé type de boîte `config4in` cette instruction indique au Raspberry Pi de définir la broche GPIO 4 comme une entrée.
 
