@@ -20,7 +20,7 @@
 
 6.  Branchez l'alimentation micro USB et vous devriez voir un texte apparaître sur votre écran.
 
-    Maintenant, vous avez un circuit et la LED devrait être allumée. Dans le cas contraire, assurez-vous d'avoir branché les câbles de liaison dans les broches corrspondantes en vérifiant le schéma ci-dessus.
+    Maintenant, vous avez un circuit et la LED devrait être allumée. Dans le cas contraire, assurez-vous d'avoir branché les câbles de liaison dans les broches correspondantes en vérifiant le schéma ci-dessus.
 
     Pourquoi la LED brille ? Lorsque le circuit est branché sur les broches GPIO du Raspberry Pi, l'électricité circule à travers le circuit. Le flux est appelé le courant électrique. La LED est allumée uniquement lorsque le courant électrique circule de la branche longue à travers l'ampoule jusqu'à la branche courte. La résistance diminue la quantité de courant électrique passant à travers le circuit. Ceci protège la LED, puisqu'un courant élevé fera briller la lumière plus vivement et s'éteindra plus rapidement.
     
