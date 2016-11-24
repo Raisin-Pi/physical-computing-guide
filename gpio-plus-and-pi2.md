@@ -4,7 +4,7 @@ Une caractéristique puissante de la Raspberry Pi est la rangée de broches GPIO
 
 ![GPIO pins](images/gpio-pins-pi2.jpg)
 
-Ces broches sont une interface physique entre la Pi et le monde extérieur. De manière très simple, vous pouvez penser à elles comme des interrupteurs que vous pouvez activer ou désactiver (entrée) ou que la Pi peut activer ou désactiver (sortie). Sur les 40 broches, 26 sont des broches GPIO et les autres correpondent aux sources d'alimentation ou à la masse (plus deux broches ID EEPROM, auxquelles vous ne devriez pas toucher, sauf si vous êtes expert en la matière).
+Ces broches sont une interface physique entre la Pi et le monde extérieur. De manière très simple, vous pouvez penser à elles comme des interrupteurs que vous pouvez activer ou désactiver (entrée) ou que la Pi peut activer ou désactiver (sortie). Sur les 40 broches, 26 sont des broches GPIO et les autres correspondent aux sources d'alimentation ou à la masse (plus deux broches ID EEPROM, auxquelles vous ne devriez pas toucher, sauf si vous êtes expert en la matière).
 
 ![GPIO layout](images/gpio-numbers-pi2.png)
 
@@ -25,17 +25,17 @@ Vous pouvez programmer les broches d'pour interagir de manière incroyable avec 
 
 ** ATTENTION ** : Si vous suivez les instructions, alors bricoler avec les GPIO sera sûr et amusant. Brancher aléatoirement des câbles et des sources d'alimentation sur votre Pi peut l'endommager ou la casser. Des effets néfastes peuvent également se produire si vous essayez de connecter les choses qui utilisent beaucoup de puissance à votre Pi ; Les LED sont très bien, les moteurs ne le sont pas. Si vous êtes inquiet à ce sujet, alors vous devriez envisager d'utiliser un circuit imprimé comme la [Pibrella] ( http://pibrella.com/ ) jusqu'à ce que vous soyez assez confiant pour utiliser les GPIO directement.
 
-Ignoraez la Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
+Ignorez la Pi un moment, l'un des plus simples circuits électriques que vous pouvez construire contient une pile (batterie) reliée à une source de lumière et un interrupteur (la résistance est là pour protéger la LED) :
 
 ![Simple circuit](images/simple-circuit.png)
 
-Lorsque nous utilisons une broche GPIO comme sortie, la Raspberry Pi remplace ** à la fois l'interrupteur et la batterie ** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts ( 3V3 ) ; lorsque la broche est ` LOW`, il est éteint.
+Lorsque nous utilisons une broche GPIO comme sortie, la Raspberry Pi remplace ** à la fois l'interrupteur et la batterie ** dans le diagramme ci-dessus. Chaque broche peut activer ou désactiver, ou `HIGH` (être allumé) ou `LOW` (être éteint) dans les termes informatiques. Lorsque la broche est ` HIGH`, il produit 3,3 volts (3V3) ; lorsque la broche est ` LOW`, il est éteint.
 
 Voici le même circuit en utilisant le Raspberry Pi. La LED est reliée à une broche GPIO (qui peut produire 3.3 V) et une broche de terre (qui correspond à 0 V et agit comme la borne négative de la batterie) :
 
 ![GPIO wth LED](images/gpio-led-pi2.png)
 
-L'étape suivante consiste à écrire un programme pour dire à la broche de fonctionner plus fortement ou plus légèrement (`HIGH` or `LOW`). Voici un exemple utilisant [Python](http://www.raspberrypi.org/learning/quick-reaction-game/) (see Step 2), et voici comment le faire dans [Scratch](http://www.raspberrypi.org/learning/robot-antenna/).
+L'étape suivante consiste à écrire un programme pour dire à la broche de fonctionner plus fortement ou plus légèrement (`HIGH` or `LOW`). Voici un exemple utilisant [Python](http://www.raspberrypi.org/learning/quick-reaction-game/) (voir étape 2), et voici comment le faire dans [Scratch](http://www.raspberrypi.org/learning/robot-antenna/).
 
 ### Entrées
 
@@ -48,7 +48,7 @@ Si vous souhaitez de l'aide pour utiliser les GPIO comme des entrées, jetez un 
 
 ## Le début de quelque chose d'étonnant
 
-Nous espérons que cela vous a encouragé à vous lancer dans l'informatique physique à l'aide de la GPIO Pi; ce n'est vraiment pas aussi difficile que ça n'y paraît. Tout commence avec une LED simple, mais cela peut vous emmener dans des endroits incroyables. Ne sous-estimez pas le plaisir pris, la créativité et le sens de la réalisationque vous pouvez obtenir à partir d'un petit ordinateur et un tas d'épingles. Amusez-vous ! Et si vous faites quelque chose de cool, s'il vous plaît, partagez le.
+Nous espérons que cela vous a encouragé à vous lancer dans l'informatique physique à l'aide de la GPIO Pi; ce n'est vraiment pas aussi difficile que ça n'y paraît. Tout commence avec une LED simple, mais cela peut vous emmener dans des endroits incroyables. Ne sous-estimez pas le plaisir pris, la créativité et le sens de la réalisation que vous pouvez obtenir à partir d'un petit ordinateur et un tas d'épingles. Amusez-vous ! Et si vous faites quelque chose de cool, s'il vous plaît, partagez-le.
 
 
-Retur vers [Commencer avec l'informatique Physique](worksheet.md)
+Retour vers [Commencer avec l'informatique Physique](worksheet.md)
