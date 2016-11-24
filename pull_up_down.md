@@ -1,6 +1,6 @@
 # Pull up et Pull down les résistances
 
-Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre, la broche est dite **flottante**, ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW` . Vous devez savoir catégoriquement l'état de la broche . Vous avez donc besoin de fixer la tension à `HIGH` ou `LOW` , puis la faire varier **seulement** quand (dans le cas de ce guide) un bouton est pressé ou une paire de câble est reliée manuellement.
+Quand une broche GPIO est en mode entrée et non connectée à 3,3 volts ou à la terre, la broche est dite **flottante**, ce qui signifie qu'elle n'a pas de tension fixe. Ce n'est pas très bon pour ce que vous voulez, puisque la broche va flotter au hasard entre `HIGH` et `LOW`. Vous devez savoir catégoriquement l'état de la broche. Vous avez donc besoin de fixer la tension à `HIGH` ou `LOW`, puis la faire varier **seulement** quand (dans le cas de ce guide) un bouton est pressé ou une paire de câble est reliée manuellement.
 
 
 Cela peut être fait de deux façons :
@@ -14,7 +14,7 @@ Cela peut être fait de deux façons :
 
 - A pull down circuit
 
-   Câblez la broche GPIO à la masse via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `LOW` . Ensuite, vous pouvez court-circuiter la broche à 3,3 volts en fermant le circuit de sorte qu'elle lira `HIGH`. Lorsque le circuit est fermé, il y a un chemin de moindre résistance jusqu'à 3,3 volts, et donc la broche va lire `HIGH` .
+   Câblez la broche GPIO à la masse via une grande (10 kOhms) résistance de sorte qu'elle lise toujours `LOW`. Ensuite, vous pouvez court-circuiter la broche à 3,3 volts en fermant le circuit de sorte qu'elle lira `HIGH`. Lorsque le circuit est fermé, il y a un chemin de moindre résistance jusqu'à 3,3 volts, et donc la broche va lire `HIGH`.
 
   ![](images/pull_down.png)
 
@@ -28,9 +28,9 @@ Heureusement, le Raspberry Pi a tous les circuits ci-dessus intégrés. Il peut 
 
 ### Circuit Pull up
 
-Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour que la GPIO 4 lise `HIGH` par défaut, alors vous allez la court-circuiter à la masse à l'aide des câbles de façon à ce qu'elle lise `LOW` quand on appuie sur le bouton ou lorsque les fils se touchent, en complétant le circuit .
+Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour que la GPIO 4 lise `HIGH` par défaut, alors vous allez la court-circuiter à la masse à l'aide des câbles de façon à ce qu'elle lise `LOW` quand on appuie sur le bouton ou lorsque les fils se touchent, en complétant le circuit.
 
-1. Utilisez de câbles de connexion , connectez un bouton poussoir aux broches GPIO du Raspberry Pi comme illustré ci-dessous. Prenez soin d'utiliser les bonnes broches. Si vous ne disposez pas de bouton-poussoir, vous pouvez utiliser deux câbles mâle / femelle afin de faire manuellement le contact entre la masse et la broche d'entrée.
+1. Utilisez de câbles de connection , connectez un bouton poussoir aux broches GPIO du Raspberry Pi comme illustré ci-dessous. Prenez soin d'utiliser les bonnes broches. Si vous ne disposez pas de bouton-poussoir, vous pouvez utiliser deux câbles mâle / femelle afin de faire manuellement le contact entre la masse et la broche d'entrée.
 
 
   ![](images/pull_up_wire.png)
@@ -61,7 +61,7 @@ Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour 
       time.sleep(0.5)
   ```
 
-5. Enregistrez votre programme , en lui donnant un nom.
+5. Enregistrez votre programme, en lui donnant un nom.
 
 6. Lancez votre programme en appuyant sur la touche **F5**
 
@@ -78,7 +78,7 @@ Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour 
 
   ![](images/pull_down_wire.png)
 
-2. Le code nécessaire pour tester le cicuit pull down est presque identique à celui du pull up. Afin de gagner du temps, nous allons tout simplement faire une copie de votre fichier et changer une chose. Cliquez sur  **Fichier** et **Enregistrer sous** et donnez à votre programme un nouveau nom.
+2. Le code nécessaire pour tester le circuit pull down est presque identique à celui du pull up. Afin de gagner du temps, nous allons tout simplement faire une copie de votre fichier et changer une chose. Cliquez sur  **Fichier** et **Enregistrer sous** et donnez à votre programme un nouveau nom.
 
 3. Trouvez la ligne `GPIO.setup` et changez le dernier paramètre : il faut passer de `GPIO.PUD_UP` à `GPIO.PUD_DOWN`. Ceci définit la résistance interne pull down sur la GPIO 4 de sorte qu'elle lise `LOW` sauf si elle est connectée à 3,3 Volts.
 
@@ -86,7 +86,7 @@ Dans cet exemple, vous allez utiliser le pull up interne de la résistance pour 
 
 4. Appuyez sur la touche **F5** pour exécuter votre nouveau programme.
 
-5. Le texte `LOW` devrait commencer à défiler en haut de l'écran, lorsque vous appuyez sur le bouton (ou connectez les fils ensemble) pendant quelques secondes, vous verrez le texte `HIGH` parce que vous êtes en train de court-circuiter la broche à 3,3 volts. Relâchez le bouton (ou déconnectez les fils ) et il sera de retour à `LOW` à cause de la résistance interne pull dpwn.
+5. Le texte `LOW` devrait commencer à défiler en haut de l'écran, lorsque vous appuyez sur le bouton (ou connectez les fils ensemble) pendant quelques secondes, vous verrez le texte `HIGH` parce que vous êtes en train de court-circuiter la broche à 3,3 volts. Relâchez le bouton (ou déconnectez les fils) et il sera de retour à `LOW` à cause de la résistance interne pull down.
 
 
   ![Pull Down Logic](images/pull_down_screenshot.png)
