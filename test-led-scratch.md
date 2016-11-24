@@ -1,6 +1,6 @@
 # Tester une LED connectée à Scratch
 
-1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour allumer la LED. Lancez le programme **Scratch** en cliquant sur **Menu** puis **Programmation** et en sélectionnant **Scratch** .
+1.  Une fois votre circuit LED complet, vous êtes maintenant prêt à utiliser Scratch pour allumer la LED. Lancez le programme **Scratch** en cliquant sur **Menu** puis **Programmation** et en sélectionnant **Scratch**.
 
  ![](images/scratch-icon.png)
 
@@ -8,7 +8,7 @@
 
     ![](images/Scratch-interface.png "The Scratch Interface")
 
-2.  Cliquez sur **Control** sur l'écran en haut à gauche . Faites glisser le bloc ![Green Flag](images/green_flag.png) sur la zone de scripts.
+2.  Cliquez sur **Control** sur l'écran en haut à gauche. Faites glisser le bloc ![Green Flag](images/green_flag.png) sur la zone de scripts.
 
 3. Faites glisser un bloc `envoyer à tous` ou `broadcast`en anglais sur votre zone de scripts et attacher le au bloc ![Green Flag](images/green_flag.png). Cliquez dans le menu déroulant sur le bloc de diffusion et sélectionnez **nouveau**.
     
